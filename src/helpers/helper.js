@@ -123,7 +123,6 @@ export const createAction = function reduxCreateAction(actionType = actionTypeIs
     const action = assoc('type', actionType, payload);
 
     if (process.env.NODE_ENV === 'test') {
-      // eslint-disable-next-line fp/no-mutating-methods
       Object.defineProperty(action, '_reduxAction', { enumerable: false, writable: true });
       action._reduxAction = {
         name: actionType,
