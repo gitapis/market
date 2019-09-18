@@ -1,0 +1,20 @@
+.container {
+    text-align: -webkit-center;
+}
+
+.MenuContainer {
+    padding: 5px;
+    display: inline;
+}
+.Image {
+    display: inline;
+    vertical-align: middle;
+    width: 40px;
+}
+.Title {
+    color: white;
+    vertical-align: middle;
+    font-size: large;
+    padding-left: 50px;
+    padding-right: 50px;
+}

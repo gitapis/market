@@ -1,0 +1,28 @@
+.container {
+    padding-bottom: 5px;
+    text-align: -webkit-center;
+}
+
+.textContainer {
+    padding: 5px;
+    display: inline;
+    background-color: white;
+    width: fit-content;
+}
+.input {
+    display: inline;
+    border-width: 0px;
+    outline-color: white;
+    vertical-align: middle;
+    min-width: 250px;
+    max-width: 500px;
+    width: 80%;
+}
+
+.img {
+    display: inline;
+    margin-left: 5px;
+    margin-right: 5px;
+    vertical-align: middle;
+    width: 25px;
+}
