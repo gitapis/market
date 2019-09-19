@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "699bc1f0347f5ca24e6d5089cafe7167",
+    "revision": "fadbe56bb8943ff36a9ee71e4d5b0137",
     "url": "/market/index.html"
   },
   {
@@ -8,16 +8,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/market/static/css/2.5db44fde.chunk.css"
   },
   {
-    "revision": "4d46bc59e6a4fa04fbb0",
-    "url": "/market/static/css/main.3d775458.chunk.css"
+    "revision": "fea902c2a6542092360c",
+    "url": "/market/static/css/main.ccf8ed31.chunk.css"
   },
   {
     "revision": "41e77e2238530c1e49ac",
     "url": "/market/static/js/2.0cb443f7.chunk.js"
   },
   {
-    "revision": "4d46bc59e6a4fa04fbb0",
-    "url": "/market/static/js/main.c0d217ef.chunk.js"
+    "revision": "fea902c2a6542092360c",
+    "url": "/market/static/js/main.b4e0a203.chunk.js"
   },
   {
     "revision": "502e4c1b6350ba532a77",
@@ -56,7 +56,23 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/market/static/media/huawei-p20-lite.7b2c7410.png"
   },
   {
+    "revision": "d1e3551d6ec00bf74c2d2e0e3c130aa6",
+    "url": "/market/static/media/log-in.d1e3551d.svg"
+  },
+  {
+    "revision": "16f6ff6996e6bf9cf6a8664f586579cc",
+    "url": "/market/static/media/menu.16f6ff69.svg"
+  },
+  {
     "revision": "8225c1b03119e73820f7a277c6777434",
     "url": "/market/static/media/nikon-d7500.8225c1b0.jpg"
+  },
+  {
+    "revision": "1c636eaa1470c1f487d5baf9506a25f5",
+    "url": "/market/static/media/search.1c636eaa.svg"
+  },
+  {
+    "revision": "d03a9e65253f18385cba600baa4befd3",
+    "url": "/market/static/media/shopping.d03a9e65.svg"
   }
 ]);
