@@ -20,7 +20,7 @@
 }
 
 .collapsibleContent {
-  padding: 0 5px;
+  padding: 0 5px !important;
   text-align: left;
   width: 290px;
 }
