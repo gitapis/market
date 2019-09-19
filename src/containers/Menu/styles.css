@@ -5,9 +5,28 @@
 .MenuContainer {
     padding: 5px;
     display: inline;
+    width: 100%;
 }
 
-.Image {
+.Image1 {
+    left: -70px;
+    position: relative;
+    display: inline;
+    vertical-align: middle;
+    width: 30px;
+}
+
+.Image2 {
+    left: 50px;
+    position: relative;
+    display: inline;
+    vertical-align: middle;
+    width: 30px;
+}
+
+.Image3 {
+    left: 60px;
+    position: relative;
     display: inline;
     vertical-align: middle;
     width: 30px;
@@ -17,6 +36,5 @@
     color: white;
     vertical-align: middle;
     font-size: large;
-    padding-left: 100px;
-    padding-right: 100px;
+    width: 100%;
 }

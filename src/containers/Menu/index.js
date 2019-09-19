@@ -16,10 +16,10 @@ export default class Menu extends Component {
         return (
             <div className="container">
                 <div className="MenuContainer">
-                    <img className="Image" src={menu} alt={menu} />
+                    <img className="Image1" src={menu} alt={menu} />
                     <span className="Title">MARKET</span>
-                    <img className="Image" src={connect} alt={connect} />
-                    <img className="Image" src={basket} alt={basket} />
+                    <img className="Image2" src={connect} alt={connect} />
+                    <img className="Image3" src={basket} alt={basket} />
                 </div>
             </div>
         );
