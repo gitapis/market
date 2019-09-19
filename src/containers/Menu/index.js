@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 
 import './styles.css';
 import '../../ressources/Fonts/font.css';
-import basket from '../../ressources/images/Basket.png';
-import connect from '../../ressources/images/Connect.png';
-import menu from '../../ressources/images/Menu.png';
+import basket from '../../ressources/images/shopping.svg';
+import connect from '../../ressources/images/log-in.svg';
+import menu from '../../ressources/images/menu.svg';
 
 export default class Menu extends Component {
     constructor(props) {
@@ -17,7 +17,7 @@ export default class Menu extends Component {
             <div className="container">
                 <div className="MenuContainer">
                     <img className="Image" src={menu} alt={menu} />
-                    <span className="Title">SOKKONA</span>
+                    <span className="Title">MARKET</span>
                     <img className="Image" src={connect} alt={connect} />
                     <img className="Image" src={basket} alt={basket} />
                 </div>

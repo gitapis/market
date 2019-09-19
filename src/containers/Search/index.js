@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import './styles.css';
 import '../../ressources/Fonts/font.css';
-import search from '../../ressources/images/search.png';
+import search from '../../ressources/images/search.svg';
 
 export default class Search extends Component {
     constructor(props) {
