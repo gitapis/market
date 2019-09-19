@@ -35,9 +35,9 @@ export const getCitiesByCulture = (ddlCities, culture) => {
 export const getValueByCulture = (object, culture) => {
     switch (culture) {
         case languages.fr: return object.fr;
-        case languages.en: return object.en;
+        case languages.ar: return object.ar;
 
-        default: return object.ar;
+        default: return object.en;
     }
 };
 
