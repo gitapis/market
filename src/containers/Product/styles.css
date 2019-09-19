@@ -1,15 +1,23 @@
+.addButton {
+  background-color: darkorange;
+  border-radius: 7px;
+  cursor: pointer;
+  padding: 5px 0 ;
+  margin: 5px 0;
+  text-align: center;
+  width: 300px;
+}
+
 .description {
-  padding-Left: 10px;
-  max-width: 350px;
+  max-width: 300px;
   width: 100%;
 }
 
 .collapsibleHead {
   border-radius: 7px;
-  padding: 5px ;
+  padding: 5px 0;
   text-align: center;
-  min-width: 300px;
-  width: 100%;
+  width: 300px;
 }
 
 .collapsibleContent {
@@ -21,5 +29,9 @@
 .imageCSS {
   max-Width: 300px;
   padding: 10px;
+  width: 100%;
+}
+
+.Product {
   width: 100%;
 }

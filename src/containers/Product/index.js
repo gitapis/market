@@ -17,6 +17,7 @@ export default class Product extends Component {
         }),
         oldPrice: number,
         price: number,
+        productId: number,
         rating: number,
         src: string,
         title: string
@@ -30,6 +31,7 @@ export default class Product extends Component {
         },
         oldPrice: 0,
         price: 0,
+        productId: 0,
         rating: 3,
         src: "",
         title: ""
@@ -53,7 +55,7 @@ export default class Product extends Component {
     renderTitle = () => {
         const { title } = this.props;
 
-        return <h4 style={{ margin : '0px'}}>{title}</h4>;
+        return <h4 style={{ margin : '0px'}}>{title.toUpperCase()}</h4>;
     };
 
     renderRating = () => {
@@ -89,27 +91,38 @@ export default class Product extends Component {
     };
 
     render() {
-        const { alt, src } = this.props;
+        const { alt, src, productId } = this.props;
 
         if(isNilOrEmpty(src)) return null;
 
         return (
-            <div style={{
-                display: 'inline-flex',
-                flexFlow: 'row wrap'
-            }}>
-                <div>
-                    {this.renderTitle()}
-                    <img src={src} alt={alt} className="imageCSS"/>
-                    {this.renderRating()}
-                </div>
-                <div>
-                    <div style={{ display: 'inline-grid' }}>
-                        {this.renderOldPrice()}
-                        {this.renderPrice()}
+            <div className="Product">
+                <div style={{
+                    width: '100%'
+                }}>
+                    <div style={{
+                        display: 'inline-flex',
+                        flexFlow: 'row wrap',
+                    }}>
+                        <div>
+                            {this.renderTitle()}
+                            <img src={src} alt={alt} className="imageCSS"/>
+                            {this.renderRating()}
+                        </div>
+                        <div>
+                            <div style={{ display: 'inline-grid' }}>
+                                {this.renderOldPrice()}
+                                {this.renderPrice()}
+                            </div>
+                            <div className="description">
+                                {this.renderDescription()}
+                            </div>
+                        </div>
                     </div>
-                    <div className="description">
-                        {this.renderDescription()}
+                </div>
+                <div onClick={() => alert('the product '+ productId +' has been added to the basket')}>
+                    <div className="addButton">
+                        Ajouter au panier
                     </div>
                 </div>
             </div>
