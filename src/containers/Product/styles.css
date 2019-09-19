@@ -14,15 +14,15 @@
 
 .collapsibleHead {
   border-radius: 7px;
-  padding: 5px 0;
-  text-align: center;
-  width: 300px;
+  padding: 5px 0 !important;
+  text-align: center !important;
+  width: 300px !important;
 }
 
 .collapsibleContent {
-  padding: 5px ;
+  padding: 0 5px;
   text-align: left;
-  width: 300px;
+  width: 290px;
 }
 
 .imageCSS {
