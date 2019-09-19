@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/market/static/css/main.ad2c1928.chunk.css",
+    "main.css": "/market/static/css/main.c1f35def.chunk.css",
     "main.js": "/market/static/js/main.c0d217ef.chunk.js",
     "main.js.map": "/market/static/js/main.c0d217ef.chunk.js.map",
     "runtime~main.js": "/market/static/js/runtime~main.30d04a8e.js",
@@ -9,10 +9,10 @@
     "static/js/2.0cb443f7.chunk.js": "/market/static/js/2.0cb443f7.chunk.js",
     "static/js/2.0cb443f7.chunk.js.map": "/market/static/js/2.0cb443f7.chunk.js.map",
     "index.html": "/market/index.html",
-    "precache-manifest.daf8c8c9ca741c53bc4e5848e9f1a6e3.js": "/market/precache-manifest.daf8c8c9ca741c53bc4e5848e9f1a6e3.js",
+    "precache-manifest.1ffde59b2d23e19768a5f7a2d41498c3.js": "/market/precache-manifest.1ffde59b2d23e19768a5f7a2d41498c3.js",
     "service-worker.js": "/market/service-worker.js",
     "static/css/2.5db44fde.chunk.css.map": "/market/static/css/2.5db44fde.chunk.css.map",
-    "static/css/main.ad2c1928.chunk.css.map": "/market/static/css/main.ad2c1928.chunk.css.map",
+    "static/css/main.c1f35def.chunk.css.map": "/market/static/css/main.c1f35def.chunk.css.map",
     "static/media/font.css": "/market/static/media/AraJozoor-Regular.fa1f99dc.eot",
     "static/media/drone-r-falcon.jpg": "/market/static/media/drone-r-falcon.c36402d4.jpg",
     "static/media/hp-envy.jpg": "/market/static/media/hp-envy.7aaaaaa1.jpg",
