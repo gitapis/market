@@ -81,7 +81,7 @@ export default class Product extends Component {
         if(isHidden) return null;
 
         return (
-            <CollapsibleComponent>
+            <CollapsibleComponent className="description">
                 <CollapsibleHead className="collapsibleHead">Voir le descriptif complet</CollapsibleHead>
                 <CollapsibleContent className="collapsibleContent">
                     <p>{message}</p>
@@ -114,7 +114,7 @@ export default class Product extends Component {
                                 {this.renderOldPrice()}
                                 {this.renderPrice()}
                             </div>
-                            <div className="description">
+                            <div>
                                 {this.renderDescription()}
                             </div>
                         </div>
