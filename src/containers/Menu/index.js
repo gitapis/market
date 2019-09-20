@@ -56,17 +56,13 @@ export default class Menu extends Component {
             <CSSTransition
                 key="swipeLine"
                 in={isShown}
-                timeout={500}
+                timeout={200}
+                unmountOnExit
                 classNames="Overlayer"
                 onEnter={() => this.handleOpenMenu()}
                 onExited={() => this.handleCloseMenu()}
             >
-                <div style={{
-                    backgroundColor: '#FFF',
-                    paddingLeft: '10px',
-                    textAlign: 'left',
-                    width: '300px'
-                }}>
+                <div className="MenuContent">
                     <div>{"Accueil"}</div>
                     <div>{"Tous les rayons"}</div>
                     <hr/>

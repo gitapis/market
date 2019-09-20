@@ -8,6 +8,15 @@
     width: 100%;
 }
 
+.MenuContent {
+    background-color: #FFF;
+    padding-left: 10px;
+    text-align: left;
+    width: 250px;
+    position: absolute;
+    left: 0px;
+}
+
 .Image1 {
     left: -70px;
     position: relative;
@@ -51,6 +60,7 @@
     opacity: 1;
 }
 .Overlayer-exit-active {
-    transition: opacity 300ms, transform 400ms ease-in-out;
+    opacity: 0;
+    transition: opacity 300ms, transform 300ms ease-in-out;
     transform: translate(-100%);
 }
