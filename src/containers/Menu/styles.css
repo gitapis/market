@@ -1,3 +1,17 @@
+.close {
+    padding: 13px;
+    position: absolute;
+    right: 0px;
+    width: 30px;
+}
+
+.CloseContainer {
+    background-color: #123;
+    height: 54px;
+    top: 0px;
+    z-index: 1000;
+}
+
 .container {
     text-align: -webkit-center;
 }
@@ -10,11 +24,19 @@
 
 .MenuContent {
     background-color: #FFF;
-    padding-left: 10px;
     text-align: left;
     width: 250px;
     position: absolute;
     left: 0px;
+    top: 0px;
+}
+
+.MenuItems {
+    background-color: #FFF;
+}
+
+.MenuItem {
+    padding-left: 10px;
 }
 
 .Image1 {
@@ -53,7 +75,7 @@
     transform: scale(0.9);
 }
 .Overlayer-enter-active {
-    transition: transform 400ms ease-in;
+    transition: transform 300ms ease-in;
     transform: translateX(0);
 }
 .Overlayer-exit {
