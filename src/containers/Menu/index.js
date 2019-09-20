@@ -18,35 +18,28 @@ import user from '../../ressources/images/user.svg';
 
 export default class Menu extends Component {
     static defaultProps = {
+        displaySideMenu: false,
         isConnected: true,
-        onClose: null
+        onClose: () => {}
     };
+
     static propTypes = {
+        displaySideMenu: PropTypes.bool,
         isConnected: PropTypes.bool,
         onClose: PropTypes.func
     };
 
     constructor(props) {
         super(props);
-        this.state = {
-            isShown: false,
-        };
     }
 
-    handleClickMenu = () => {
-        this.setState(() => ({
-            isShown: !this.state.isShown
-        }));
-    };
-
     renderContent(){
-        const { isConnected } = this.props;
-        const { isShown} = this.state;
+        const { displaySideMenu, isConnected } = this.props;
 
         return (
             <CSSTransition
                 key="swipeLine"
-                in={isShown}
+                in={displaySideMenu}
                 timeout={200}
                 unmountOnExit
                 classNames="Overlayer"
@@ -101,7 +94,7 @@ export default class Menu extends Component {
         return (
             <div className="container">
                 <div className="MenuContainer">
-                    <img className="Image1" src={menu} alt={menu} onClick={() => this.handleClickMenu()}/>
+                    <img className="Image1" src={menu} alt={menu} onClick={() => this.props.onClose()}/>
                     <span className="Title">MARKET</span>
                     <img className="Image2" src={connect} alt={connect} />
                     <img className="Image3" src={basket} alt={basket} />

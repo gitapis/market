@@ -20,6 +20,13 @@ class App extends Component {
         culture: languages.ar,
     };
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            isBlackBackgroundDisplayed: false,
+        };
+    }
+
     handleClick = (city) => {
         const { country, getPrayerTime } = this.props;
         const date = new Date();
@@ -28,6 +35,11 @@ class App extends Component {
         getPrayerTime(city.key, country.key, 2, date.getMonth() + 1, date.getFullYear());
     };
 
+    handleDisplayBlackBackground = () => {
+        this.setState(() => ({
+            isBlackBackgroundDisplayed: !this.state.isBlackBackgroundDisplayed
+        }));
+    };
 
     renderHeader = () => {
         // return (
@@ -38,7 +50,7 @@ class App extends Component {
 
         return (
             <header className="App-header">
-                <Menu />
+                <Menu displaySideMenu={this.state.isBlackBackgroundDisplayed} onClose={this.handleDisplayBlackBackground} />
                 <Search/>
             </header>
         );
@@ -68,9 +80,17 @@ class App extends Component {
         );
     };
 
+    renderBlackBackground = () => {
+        const { isBlackBackgroundDisplayed} = this.state;
+
+        if(isBlackBackgroundDisplayed) return <div className="BlackBackground" onClick={() => this.handleDisplayBlackBackground()}></div>;
+
+        return null;
+    }
     render() {
         return (
             <div className="App">
+                {this.renderBlackBackground()}
                 {this.renderHeader()}
                 {this.renderBody()}
                 {this.renderFooter()}
