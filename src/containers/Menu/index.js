@@ -47,7 +47,7 @@ export default class Menu extends Component {
             <CSSTransition
                 key="swipeLine"
                 in={isShown}
-                timeout={300}
+                timeout={200}
                 unmountOnExit
                 classNames="Overlayer"
             >
