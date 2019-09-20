@@ -29,10 +29,6 @@ export default class Menu extends Component {
         onClose: PropTypes.func
     };
 
-    constructor(props) {
-        super(props);
-    }
-
     renderContent(){
         const { displaySideMenu, isConnected } = this.props;
 
@@ -47,7 +43,7 @@ export default class Menu extends Component {
                 <div className="MenuContent">
                     <div>
                         <div className="CloseContainer">
-                            <img className="close" src={close} alt={close} onClick={() => this.handleClickMenu()} />
+                            <img className="close" src={close} alt={close} onClick={() => this.props.onClose()} />
                         </div>
                         <div className="MenuItems">
                             <div className="MenuItem">
