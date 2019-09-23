@@ -1,6 +1,6 @@
 .close {
     cursor: pointer;
-    padding: 13px;
+    padding: 9px;
     position: absolute;
     right: 0px;
     width: 30px;
@@ -8,7 +8,7 @@
 
 .CloseContainer {
     background-color: #123;
-    height: 54px;
+    height: 49.4px;
     top: 0px;
     z-index: 1000;
 }
@@ -30,6 +30,7 @@
     position: absolute;
     left: 0px;
     top: 0px;
+    z-index: 3;
 }
 
 .MenuItems {
@@ -51,24 +52,27 @@
 }
 
 .Image1 {
-    left: -70px;
-    position: relative;
     display: inline;
+    left: 5px;
+    position: absolute;
+    top: 9px;
     vertical-align: middle;
     width: 30px;
 }
 
 .Image2 {
-    left: 50px;
-    position: relative;
+    right: 55px;
+    top: 9px;
+    position: absolute;
     display: inline;
     vertical-align: middle;
     width: 30px;
 }
 
 .Image3 {
-    left: 60px;
-    position: relative;
+    right: 12px;
+    top: 9px;
+    position: absolute;
     display: inline;
     vertical-align: middle;
     width: 30px;
@@ -76,9 +80,13 @@
 
 .Title {
     color: white;
+    font-size: x-large;
+    left: 0px;
+    position: absolute;
+    top: -5px;
     vertical-align: middle;
-    font-size: large;
     width: 100%;
+    z-index: -1;
 }
 
 .Overlayer-enter {
