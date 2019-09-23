@@ -57,11 +57,15 @@ class App extends Component {
     };
 
     renderBody = () => {
+        const { isBlackBackgroundDisplayed} = this.state;
+
         return (
-            <div className="App-body">
-                <div className="App-Container">
-                    <div className="App-block">
-                        <ProductList />
+            <div className={isBlackBackgroundDisplayed ? "BlackBackground" : ""} onClick={isBlackBackgroundDisplayed ? () => this.handleDisplayBlackBackground(): undefined}>
+                <div className={isBlackBackgroundDisplayed ? "App-body disabledbutton" : "App-body"}>
+                    <div className="App-Container">
+                        <div className="App-block">
+                            <ProductList />
+                        </div>
                     </div>
                 </div>
             </div>
@@ -80,17 +84,15 @@ class App extends Component {
         );
     };
 
-    renderBlackBackground = () => {
-        const { isBlackBackgroundDisplayed} = this.state;
+    /*renderBlackBackground = () => {
 
-        if(isBlackBackgroundDisplayed) return <div className="BlackBackground" onClick={() => this.handleDisplayBlackBackground()}></div>;
 
-        return null;
-    }
+        return <div >{this.renderBody()}</div>;
+
+    }*/
     render() {
         return (
             <div className="App">
-                {this.renderBlackBackground()}
                 {this.renderHeader()}
                 {this.renderBody()}
                 {this.renderFooter()}
