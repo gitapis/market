@@ -51,12 +51,6 @@
 }
 
 .BlackBackground{
-  /*height: 100%;
-  position: absolute;
-  width: 100%;
-  background-color: black;
-  z-index: 5;
-  top: 0;*/
   filter: brightness(30%);
 }
 
