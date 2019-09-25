@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/market/static/css/main.bbd9f906.chunk.css",
+    "main.css": "/market/static/css/main.94b7eb28.chunk.css",
     "main.js": "/market/static/js/main.747e5615.chunk.js",
     "main.js.map": "/market/static/js/main.747e5615.chunk.js.map",
     "runtime~main.js": "/market/static/js/runtime~main.4430faea.js",
@@ -9,10 +9,10 @@
     "static/js/2.d48d8cf7.chunk.js": "/market/static/js/2.d48d8cf7.chunk.js",
     "static/js/2.d48d8cf7.chunk.js.map": "/market/static/js/2.d48d8cf7.chunk.js.map",
     "index.html": "/market/index.html",
-    "precache-manifest.9d82e80b341b7bfc4fb9aa68cca22288.js": "/market/precache-manifest.9d82e80b341b7bfc4fb9aa68cca22288.js",
+    "precache-manifest.732524dd9f15d27545d64c28aed48940.js": "/market/precache-manifest.732524dd9f15d27545d64c28aed48940.js",
     "service-worker.js": "/market/service-worker.js",
     "static/css/2.5db44fde.chunk.css.map": "/market/static/css/2.5db44fde.chunk.css.map",
-    "static/css/main.bbd9f906.chunk.css.map": "/market/static/css/main.bbd9f906.chunk.css.map",
+    "static/css/main.94b7eb28.chunk.css.map": "/market/static/css/main.94b7eb28.chunk.css.map",
     "static/media/font.css": "/market/static/media/AraJozoor-Regular.fa1f99dc.eot",
     "static/media/at-sign.svg": "/market/static/media/at-sign.006caf8b.svg",
     "static/media/drone-r-falcon.jpg": "/market/static/media/drone-r-falcon.c36402d4.jpg",
