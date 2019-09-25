@@ -19,15 +19,45 @@ import user from '../../ressources/images/user.svg';
 export default class Menu extends Component {
     static defaultProps = {
         displaySideMenu: false,
+        displayBasket: false,
         isConnected: true,
-        onClose: () => {}
+        onClose: () => {},
+        onOpenBasket: () => {}
     };
 
     static propTypes = {
         displaySideMenu: PropTypes.bool,
+        displayBasket: PropTypes.bool,
         isConnected: PropTypes.bool,
-        onClose: PropTypes.func
+        onClose: PropTypes.func,
+        onOpenBasket: PropTypes.func
     };
+
+    constructor(props){
+        super(props);
+        this.state = {
+            isBasketDisplayed: false,
+        };
+    }
+
+    handleDisplayBasket = () => {
+        this.setState(() => ({
+            isBasketDisplayed: !this.state.isBasketDisplayed
+        }));
+
+        this.props.onOpenBasket();
+    };
+
+    renderBasket = () => {
+        const { displayBasket } = this.props;
+
+        return displayBasket ?
+            <div className="PopupContainer">
+                <div className="Popup"></div>
+            </div>
+            :
+            null;
+    }
 
     renderContent(){
         const { displaySideMenu, isConnected } = this.props;
@@ -93,8 +123,9 @@ export default class Menu extends Component {
                     <img className="Image1" src={menu} alt={menu} onClick={() => this.props.onClose()}/>
                     <span className="Title">MARKET</span>
                     <img className="Image2" src={connect} alt={connect} />
-                    <img className="Image3" src={basket} alt={basket} />
+                    <img className="Image3" src={basket} alt={basket} onClick={() => this.handleDisplayBasket()} />
                 </div>
+                {this.renderBasket()}
                 <div>
                     {this.renderContent()}
                 </div>

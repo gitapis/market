@@ -24,6 +24,7 @@ class App extends Component {
         super(props);
         this.state = {
             isBlackBackgroundDisplayed: false,
+            isMenuDisplayed: false,
         };
     }
 
@@ -35,9 +36,35 @@ class App extends Component {
         getPrayerTime(city.key, country.key, 2, date.getMonth() + 1, date.getFullYear());
     };
 
-    handleDisplayBlackBackground = () => {
+    handleDisplayMenu = () => {
+        this.handleCloseAll();
         this.setState(() => ({
-            isBlackBackgroundDisplayed: !this.state.isBlackBackgroundDisplayed
+            isMenuDisplayed: !this.state.isMenuDisplayed,
+            isBasketDisplayed: false,
+        }));
+        this.handleDisplayBlackBackground(!this.state.isMenuDisplayed);
+    }
+
+    handleDisplayBasket = () => {
+        this.handleCloseAll();
+        this.setState(() => ({
+            isBasketDisplayed: !this.state.isBasketDisplayed,
+            isMenuDisplayed: false,
+        }));
+        this.handleDisplayBlackBackground(!this.state.isBasketDisplayed);
+    }
+
+    handleDisplayBlackBackground = (state) => {
+        this.setState(() => ({
+            isBlackBackgroundDisplayed: state,
+        }));
+    };
+
+    handleCloseAll = () => {
+        this.setState(() => ({
+            isMenuDisplayed: false,
+            isBlackBackgroundDisplayed: false,
+            isBasketDisplayed: false
         }));
     };
 
@@ -50,17 +77,20 @@ class App extends Component {
 
         return (
             <header className="App-header">
-                <Menu displaySideMenu={this.state.isBlackBackgroundDisplayed} onClose={this.handleDisplayBlackBackground} />
+                <Menu displaySideMenu={this.state.isMenuDisplayed}
+                      displayBasket={this.state.isBasketDisplayed}
+                      onClose={this.handleDisplayMenu}
+                      onOpenBasket={this.handleDisplayBasket}/>
                 <Search/>
             </header>
         );
     };
 
     renderBody = () => {
-        const { isBlackBackgroundDisplayed} = this.state;
+        const { isBlackBackgroundDisplayed } = this.state;
 
         return (
-            <div className={isBlackBackgroundDisplayed ? "BlackBackground" : ""} onClick={isBlackBackgroundDisplayed ? () => this.handleDisplayBlackBackground(): undefined}>
+            <div className={isBlackBackgroundDisplayed ? "BlackBackground" : ""} onClick={isBlackBackgroundDisplayed ? () => this.handleCloseAll(): undefined}>
                 <div className={isBlackBackgroundDisplayed ? "App-body disabledbutton" : "App-body"}>
                     <div className="App-Container">
                         <div className="App-block">
