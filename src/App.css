@@ -23,6 +23,7 @@
 
 .App-header {
   background-color: #123;
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, .5);
   font-family: 'AraJozoor-Regular',Sans-Serif;
   text-align: center;
   top: 0;
