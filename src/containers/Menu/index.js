@@ -15,6 +15,7 @@ import logout from '../../ressources/images/logout.svg';
 import orders from '../../ressources/images/shopping-bag.svg';
 import menu from '../../ressources/images/menu.svg';
 import user from '../../ressources/images/user.svg';
+import Basket from '../Basket';
 
 export default class Menu extends Component {
     static defaultProps = {
@@ -47,17 +48,6 @@ export default class Menu extends Component {
 
         this.props.onOpenBasket();
     };
-
-    renderBasket = () => {
-        const { displayBasket } = this.props;
-
-        return displayBasket ?
-            <div className="PopupContainer">
-                <div className="Popup"></div>
-            </div>
-            :
-            null;
-    }
 
     renderContent(){
         const { displaySideMenu, isConnected } = this.props;
@@ -117,15 +107,17 @@ export default class Menu extends Component {
     }
 
     render() {
+        const { displayBasket, onClose } = this.props;
+
         return (
             <div className="container">
                 <div className="MenuContainer">
-                    <img className="Image1" src={menu} alt={menu} onClick={() => this.props.onClose()}/>
+                    <img className="Image1" src={menu} alt={menu} onClick={() => onClose()}/>
                     <span className="Title">MARKET</span>
                     <img className="Image2" src={connect} alt={connect} />
                     <img className="Image3" src={basket} alt={basket} onClick={() => this.handleDisplayBasket()} />
                 </div>
-                {this.renderBasket()}
+                <Basket displayBasket={displayBasket}/>
                 <div>
                     {this.renderContent()}
                 </div>

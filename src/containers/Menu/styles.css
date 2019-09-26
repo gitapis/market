@@ -27,7 +27,7 @@
     background-color: #FFF;
     border-radius: 0 0 10px 0;
     left: 0px;
-    min-height: 350px;
+    min-height: 450px;
     position: absolute;
     text-align: left;
     top: 0px;
@@ -108,22 +108,4 @@
     opacity: 0;
     transition: opacity 200ms, transform 200ms ease-in-out;
     transform: translate(-100%);
-}
-
-.Popup {
-    background-color: white;
-    border-radius: 10px;
-    height: 90%;
-    opacity: 1;
-    margin-top: 25px;
-    width: 90%;
-}
-
-.PopupContainer {
-    height: 300px;
-    position: absolute;
-    width: 100%;
-    z-index: 10;
-    left: 0;
-    top: 100%;
 }

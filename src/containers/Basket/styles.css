@@ -1,0 +1,47 @@
+.Basket {
+    background-color: white;
+    border-radius: 10px;
+    opacity: 1;
+    height: 300px;
+    overflow: scroll;
+    margin-top: 25px;
+    width: 90%;
+}
+
+.BasketContainer {
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+    left: 0;
+    top: 100%;
+}
+
+.BasketCounter {
+    display: inline-flex;
+    height: 50%;
+}
+
+.BasketItem {
+    display: inline-flex;
+    position: relative;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.BasketItemImage {
+    height: 100px;
+}
+
+.BasketImage {
+}
+
+.BasketOperation {
+    background-color: #123;
+    border-radius: 50px;
+    color: white;
+    width: 20px;
+}
+
+.BasketCount {
+    width: 20px;
+}

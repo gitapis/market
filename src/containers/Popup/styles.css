@@ -1,0 +1,17 @@
+.Popup {
+    background-color: white;
+    border-radius: 10px;
+    height: 90%;
+    opacity: 1;
+    margin-top: 25px;
+    width: 90%;
+}
+
+.PopupContainer {
+    height: 300px;
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+    left: 0;
+    top: 100%;
+}

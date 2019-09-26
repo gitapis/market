@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 
 import './styles.css';
@@ -5,6 +6,14 @@ import '../../ressources/Fonts/font.css';
 import search from '../../ressources/images/search.svg';
 
 export default class Search extends Component {
+    static defaultProps = {
+        onSearchClick: () => {}
+    };
+
+    static propTypes = {
+        onSearchClick: PropTypes.func
+    };
+
     constructor(props) {
         super(props);
         this.state = {value: ''};
@@ -28,7 +37,12 @@ export default class Search extends Component {
                 <div className="container">
                     <div className="textContainer">
                         <img className="img" src={search} alt={search} />
-                        <input className="input" type="text" value={this.state.value} onChange={this.handleChange} />
+                        <input className="input"
+                               type="text"
+                               value={this.state.value}
+                               onChange={this.handleChange}
+                               onClick={this.props.onSearchClick}
+                        />
                     </div>
                 </div>
                 <input style={{ display: 'none'}} type="submit" value="Submit" />

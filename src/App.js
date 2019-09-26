@@ -81,7 +81,7 @@ class App extends Component {
                       displayBasket={this.state.isBasketDisplayed}
                       onClose={this.handleDisplayMenu}
                       onOpenBasket={this.handleDisplayBasket}/>
-                <Search/>
+                <Search onSearchClick={this.handleCloseAll}/>
             </header>
         );
     };
