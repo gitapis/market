@@ -8,7 +8,7 @@
 
 .CloseContainer {
     background-color: #123;
-    height: 48.4px;
+    height: 48px;
     top: 0px;
     z-index: 1000;
 }
@@ -25,11 +25,13 @@
 
 .MenuContent {
     background-color: #FFF;
-    text-align: left;
-    width: 250px;
-    position: absolute;
+    border-radius: 0 0 10px 0;
     left: 0px;
+    min-height: 350px;
+    position: absolute;
+    text-align: left;
     top: 0px;
+    width: 65%;
     z-index: 3;
 }
 
