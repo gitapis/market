@@ -35,6 +35,7 @@ export default class Basket extends Component {
                             </div>
                         </div>
                     </div>
+                    <hr/>
                     <div className="BasketItem">
                         <div className="BasketImage">
                             <img className="BasketItemImage" src={img2} alt={img2} />
@@ -45,6 +46,7 @@ export default class Basket extends Component {
                             <div className="BasketOperation">+</div>
                         </div>
                     </div>
+                    <hr/>
                     <div className="BasketItem">
                         <div className="BasketImage">
                             <img className="BasketItemImage" src={img3} alt={img3} />
@@ -55,6 +57,7 @@ export default class Basket extends Component {
                             <div className="BasketOperation">+</div>
                         </div>
                     </div>
+                    <hr/>
                     <div className="BasketItem">
                         <div className="BasketImage">
                             <img className="BasketItemImage" src={img4} alt={img4} />
@@ -65,6 +68,8 @@ export default class Basket extends Component {
                             <div className="BasketOperation">+</div>
                         </div>
                     </div>
+                    <div className="BasketCheck">Valider la commande</div>
+                    <div className="BasketCancelation">Annuler la commande</div>
                 </div>
             </div>
             :

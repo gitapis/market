@@ -8,6 +8,25 @@
     width: 90%;
 }
 
+.BasketCancelation {
+    background-color: black;
+    border-radius: 7px;
+    color: white;
+    cursor: pointer;
+    margin: 5px 0;
+    text-align: center;
+    width: 50%;
+}
+.BasketCheck {
+    background-color: #34afc7;
+    border-radius: 7px;
+    color: white;
+    cursor: pointer;
+    margin: 5px 0;
+    text-align: center;
+    width: 70%;
+}
+
 .BasketContainer {
     position: absolute;
     width: 100%;
@@ -25,7 +44,6 @@
     align-items: center;
     display: inline-flex;
     position: relative;
-    margin-bottom: 20px;
     width: 100%;
 }
 
@@ -34,6 +52,8 @@
 }
 
 .BasketImage {
+    height: 100px;
+    width: 150px;
 }
 
 .BasketOperation {
