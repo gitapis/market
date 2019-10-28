@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "6b8c8d52fa6150582d2a1d2b5d51d42e",
+    "revision": "a1870b21155e1526d88857d0d17f57a4",
     "url": "/market/index.html"
   },
   {
@@ -8,16 +8,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/market/static/css/2.5db44fde.chunk.css"
   },
   {
-    "revision": "295db9cbcf8e4625e17f",
-    "url": "/market/static/css/main.c4f44a00.chunk.css"
+    "revision": "3f8bf1c9c011562353d6",
+    "url": "/market/static/css/main.ab4314b9.chunk.css"
   },
   {
     "revision": "7839dda96c64a3a16a89",
     "url": "/market/static/js/2.d8d0421f.chunk.js"
   },
   {
-    "revision": "295db9cbcf8e4625e17f",
-    "url": "/market/static/js/main.1761eb7a.chunk.js"
+    "revision": "3f8bf1c9c011562353d6",
+    "url": "/market/static/js/main.a748c5d4.chunk.js"
   },
   {
     "revision": "e47acf3897170b4aaa20",
@@ -52,8 +52,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/market/static/media/home.55644be0.svg"
   },
   {
-    "revision": "7aaaaaa1d1271bba0eca041ce1cf8dbb",
-    "url": "/market/static/media/hp-envy.7aaaaaa1.jpg"
+    "revision": "a0ef0dbf6562a6fa0938f37d70e8bfee",
+    "url": "/market/static/media/hp-envy.a0ef0dbf.jpg"
   },
   {
     "revision": "4c7d04c8e4ce61008e2ac89ecf15172b",
@@ -88,8 +88,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/market/static/media/nikon-d7500.8225c1b0.jpg"
   },
   {
-    "revision": "598b815fb3ffdfd0562b3d20ea337048",
-    "url": "/market/static/media/search.598b815f.svg"
+    "revision": "1c636eaa1470c1f487d5baf9506a25f5",
+    "url": "/market/static/media/search.1c636eaa.svg"
   },
   {
     "revision": "dd75d8007592eb3928c3691e2d251294",
