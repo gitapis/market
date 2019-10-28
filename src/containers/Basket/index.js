@@ -27,10 +27,12 @@ export default class Basket extends Component {
                         <div className="BasketImage">
                             <img className="BasketItemImage" src={img1} alt={img1} />
                         </div>
-                        <div className="BasketCounter">
-                            <div className="BasketOperation">-</div>
-                            <div className="BasketCount">1</div>
-                            <div className="BasketOperation">+</div>
+                        <div>
+                            <div className="BasketCounter">
+                                <div className="BasketOperation">-</div>
+                                <div className="BasketCount">1</div>
+                                <div className="BasketOperation">+</div>
+                            </div>
                         </div>
                     </div>
                     <div className="BasketItem">
