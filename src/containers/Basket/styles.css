@@ -13,9 +13,9 @@
     border-radius: 7px;
     color: white;
     cursor: pointer;
-    margin: 5px 0;
+    margin: 5px 0 20px 0;
     text-align: center;
-    width: 50%;
+    width: 70%;
 }
 .BasketCheck {
     background-color: #34afc7;
