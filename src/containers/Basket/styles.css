@@ -1,10 +1,11 @@
 .Basket {
     background-color: white;
     border-radius: 4px;
-    opacity: 1;
     height: 400px;
-    overflow: scroll;
     margin-top: 25px;
+    opacity: 1;
+    overflow: scroll;
+    padding-top: 10px;
     width: 90%;
 }
 
@@ -28,11 +29,16 @@
 }
 
 .BasketContainer {
+    left: 0;
     position: absolute;
+    top: 100%;
     width: 100%;
     z-index: 10;
-    left: 0;
-    top: 100%;
+}
+
+
+.BasketCount {
+    width: 20px;
 }
 
 .BasketCounter {
@@ -61,21 +67,17 @@
     width: 125px;
 }
 
+.BasketTotalPrice {
+    display: inline-flex;
+    font-size: larger;
+    font-variant: petite-caps;
+}
+
 .BasketOperation {
     background-color: #123;
     border-radius: 50px;
     color: white;
     width: 20px;
-}
-
-.BasketCount {
-    width: 20px;
-}
-
-.BasketTotalPrice {
-    display: inline-flex;
-    font-size: larger;
-    font-variant: petite-caps;
 }
 
 .TotalPrice {
