@@ -118,11 +118,9 @@ export default class Basket extends Component {
     renderBasketItems = () => {
         const { BasketProducts } = this.state;
 
-        if(isNilOrEmpty(BasketProducts)) return null;
-
         return (
             <div className="Basket">
-                {BasketProducts.map((item, index) => this.renderBasketItem(item,index))}
+                {!isNilOrEmpty(BasketProducts) ? BasketProducts.map((item, index) => this.renderBasketItem(item,index)) : null}
                 <div className="BasketTotalPrice">Prix total :
                     <div className="TotalPrice">{this.getTotalPrice()} DH</div>
                 </div>

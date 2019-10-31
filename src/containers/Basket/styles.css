@@ -1,7 +1,7 @@
 .Basket {
     background-color: white;
     border-radius: 4px;
-    height: 400px;
+    max-height: 400px;
     margin-top: 25px;
     opacity: 1;
     overflow: scroll;
