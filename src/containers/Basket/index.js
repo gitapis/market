@@ -96,6 +96,7 @@ export default class Basket extends Component {
                         <div className="BasketOperation" onClick={() => this.handleOperation(ProductId,  "+")}>+</div>
                         <div className="BasketItemPrice">{totalItemPrice} DH</div>
                     </div>
+                    <hr/>
                 </div>
             </div>);
     }
