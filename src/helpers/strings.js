@@ -156,6 +156,15 @@ export const copyright = {
 export const products = [
         {
             "productId": 1,
+            "price": 5299.99,
+            "rating": 3,
+            "title": "NIKON D5300 Noir",
+            "src": nikon,
+            "alt": nikon,
+            "description": "NIKON D5300 Noir + AF-P 18-55VR Appareil photo reflex - Capteur CMOS format DX 24.2 Mégapixels - Écran orientable 8,1 cm (3,2 pouces) - Wi-Fi et GPS intégrés - Processeur EXPEED 4 - Sensibilité élevée (jusqu’à 12 800 ISO) - Vidéos en Full HD - Support d‘enregistrement: Cartes mémoire SD / SDHC et SDXC compatibles UHS-I - USB Hi-Speed - Sortie vidéo: NTSC, PAL - Sortie mini HDMI (type C)"
+        },
+        {
+            "productId": 2,
             "oldPrice": 2699.99,
             "price": 2499.99,
             "rating": 4,
@@ -163,15 +172,6 @@ export const products = [
             "src": huawei,
             "alt": huawei,
             "description": "Le Huawei P20 Lite est un smartphone équipé d'un écran bord à bord de 5,84 pouces au format 19/9. Fonctionnant avec Android 8 et la surcouche EMUI 8, il embarque le processeur Kirin 659 couplé à 4 Go de mémoire vive et 64 Go d'espace de stockage extensible. Côté photo, il dispose d'un double module principal (16 Mpix + 2 Mpix) et pour les selfies d'un capteur de 16 Mpix. "
-        },
-        {
-            "productId": 2,
-            "price": 5299.99,
-            "rating": 3,
-            "title": "NIKON D5300 Noir",
-            "src": nikon,
-            "alt": nikon,
-            "description": "NIKON D5300 Noir + AF-P 18-55VR Appareil photo reflex - Capteur CMOS format DX 24.2 Mégapixels - Écran orientable 8,1 cm (3,2 pouces) - Wi-Fi et GPS intégrés - Processeur EXPEED 4 - Sensibilité élevée (jusqu’à 12 800 ISO) - Vidéos en Full HD - Support d‘enregistrement: Cartes mémoire SD / SDHC et SDXC compatibles UHS-I - USB Hi-Speed - Sortie vidéo: NTSC, PAL - Sortie mini HDMI (type C)"
         },
         {
             "productId": 3,
