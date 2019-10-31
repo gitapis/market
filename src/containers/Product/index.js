@@ -89,9 +89,9 @@ class Product extends Component {
     };
 
     render() {
-        const { product, basketProducts } = this.props;
+        const { product } = this.props;
         const { alt, src } = product;
-console.log(basketProducts)
+
         if(isNilOrEmpty(src)) return null;
 
         return (
