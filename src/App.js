@@ -114,12 +114,6 @@ class App extends Component {
         );
     };
 
-    /*renderBlackBackground = () => {
-
-
-        return <div >{this.renderBody()}</div>;
-
-    }*/
     render() {
         return (
             <div className="App">

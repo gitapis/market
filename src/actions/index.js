@@ -25,3 +25,10 @@ export function selectCountry(Country) {
     payload: Country
   };
 }
+
+export function selectProduct(Product) {
+  return {
+    type: 'SELECT_PRODUCT',
+    payload: Product
+  };
+}

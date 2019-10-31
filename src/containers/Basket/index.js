@@ -88,9 +88,13 @@ export default class Basket extends Component {
                     <div className="BasketCounter">
                         {Count > 1
                             ? <div className="BasketOperation" onClick={() => this.handleOperation(ProductId, "-")}>-</div>
-                            : <div className="BasketOperation" onClick={() => {
+                            : <div className="BasketItemTrash" onClick={() => {
                                 if (window.confirm('Are you sure you wish to delete this item?')) this.spliceOperation(index)
-                            }}>-</div>
+                            }}>
+                                <div>
+                                    <span className="icon-bin"></span>
+                                </div>
+                            </div>
                         }
                         <div className="BasketCount">{Count}</div>
                         <div className="BasketOperation" onClick={() => this.handleOperation(ProductId,  "+")}>+</div>

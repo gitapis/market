@@ -1,44 +1,45 @@
 import {CollapsibleComponent, CollapsibleHead, CollapsibleContent} from 'react-collapsible-component'
 import React, { Component } from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 import Rating from 'react-star-rating-component';
 
 import './styles.css';
 import '../../ressources/Fonts/font.css';
 import { isNilOrEmpty } from '../../helpers/helper';
-import { bool, exact, number, string } from 'prop-types';
+import { exact, number, string } from 'prop-types';
 import Price from '../Price';
+import {selectProduct} from "../../actions";
 
-export default class Product extends Component {
+class Product extends Component {
     static propTypes = {
-        alt: string,
-        description: exact({
-            isHidden : bool,
-            message: string
-        }),
-        oldPrice: number,
-        price: number,
-        productId: number,
-        rating: number,
-        src: string,
-        title: string
+        product: exact({
+            alt: string,
+            description: string,
+            oldPrice: number,
+            price: number,
+            productId: number,
+            rating: number,
+            src: string,
+            title: string
+        })
     };
 
     static defaultProps = {
-        alt: "",
-        description: {
-            isHidden : true,
-            message: ""
-        },
-        oldPrice: 0,
-        price: 0,
-        productId: 0,
-        rating: 3,
-        src: "",
-        title: ""
+        product: {
+            alt: "",
+            description: "",
+            oldPrice: 0,
+            price: 0,
+            productId: 0,
+            rating: 3,
+            src: "",
+            title: ""
+        }
     };
 
     renderOldPrice = () => {
-        const { oldPrice, price } = this.props;
+        const { oldPrice, price } = this.props.product;
         if(isNilOrEmpty(oldPrice) || oldPrice === 0) return null;
 
         if(oldPrice <= price) return null;
@@ -47,19 +48,19 @@ export default class Product extends Component {
     };
 
     renderPrice = () => {
-        const { price } = this.props;
+        const { price } = this.props.product;
 
         return <Price color="red" price={price} />;
     };
 
     renderTitle = () => {
-        const { title } = this.props;
+        const { title } = this.props.product;
 
         return <h4 style={{ margin : '0px'}}>{title.toUpperCase()}</h4>;
     };
 
     renderRating = () => {
-        const { rating } = this.props;
+        const { rating } = this.props.product;
 
         return (
             <div>
@@ -73,26 +74,24 @@ export default class Product extends Component {
     };
 
     renderDescription = () => {
-        const { description } = this.props;
+        const { description } = this.props.product;
 
         if(!description) return null;
-
-        const { isHidden, message } = description;
-        if(isHidden) return null;
 
         return (
             <CollapsibleComponent className="description">
                 <CollapsibleHead className="collapsibleHead">Voir le descriptif complet</CollapsibleHead>
                 <CollapsibleContent className="collapsibleContent">
-                    <p>{message}</p>
+                    <p>{description}</p>
                 </CollapsibleContent>
             </CollapsibleComponent>
         );
     };
 
     render() {
-        const { alt, src, productId } = this.props;
-
+        const { product, basketProducts } = this.props;
+        const { alt, src } = product;
+console.log(basketProducts)
         if(isNilOrEmpty(src)) return null;
 
         return (
@@ -120,12 +119,25 @@ export default class Product extends Component {
                         </div>
                     </div>
                 </div>
-                <div onClick={() => alert('the product '+ productId +' has been added to the basket')}>
+                <div onClick={() => this.props.selectProduct(product)}>
                     <div className="addButton">
                         Ajouter au panier
                     </div>
                 </div>
+                <hr/>
             </div>
         );
     }
 }
+
+function mapStateToProps(state) {
+    return {
+        basketProducts: state.basketProducts
+    };
+}
+
+function mapDispatchToProps(dispatch) {
+    return bindActionCreators({ selectProduct: selectProduct }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Product);

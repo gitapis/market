@@ -19,9 +19,8 @@
     width: 70%;
 }
 .BasketCheck {
-    background-color: #34afc7;
+    background-color: #ffc82e;
     border-radius: 7px;
-    color: white;
     cursor: pointer;
     margin: 5px 0;
     text-align: center;
@@ -35,7 +34,6 @@
     width: 100%;
     z-index: 10;
 }
-
 
 .BasketCount {
     width: 20px;
@@ -62,6 +60,10 @@
     margin-left: 15px;
 }
 
+.BasketItemTrash {
+    width: 20px;
+}
+
 .BasketImage {
     height: 100px;
     width: 125px;
@@ -74,13 +76,10 @@
 }
 
 .BasketOperation {
-    background-color: #123;
-    border-radius: 50px;
-    color: white;
     width: 20px;
 }
 
 .TotalPrice {
     margin-left: 15px;
-    color: red;
+    color: #ffa40e;
 }
