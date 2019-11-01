@@ -3,13 +3,16 @@ import React, { Component } from 'react';
 
 import './styles.css';
 import '../../ressources/Fonts/font.css';
-import img1 from "../../ressources/images/hp-envy.jpg";
-import img2 from "../../ressources/images/drone-r-falcon.jpg";
-import img3 from "../../ressources/images/huawei-p20-lite.png";
-import img4 from "../../ressources/images/nikon-d7500.jpg";
 import {isNilOrEmpty} from "../../helpers/helper";
+import {bindActionCreators} from "redux";
+import {
+    selectProduct,
+    unselectProduct,
+    unselectAllProducts
+} from "../../actions";
+import {connect} from "react-redux";
 
-export default class Basket extends Component {
+class Basket extends Component {
     static defaultProps = {
         displayBasket: false,
     };
@@ -18,86 +21,29 @@ export default class Basket extends Component {
         displayBasket: PropTypes.bool,
     };
 
-    constructor(props){
-        super(props);
-        this.state = {
-            BasketProducts: [
-                {
-                    ProductId: 1,
-                    Count: 1,
-                    Src: img1,
-                    Alt: img1,
-                    Price: 13718.99
-                },
-                {
-                    ProductId: 2,
-                    Count: 2,
-                    Src: img2,
-                    Alt: img2,
-                    Price: 1539.99
-                },
-                {
-                    ProductId: 3,
-                    Count: 1,
-                    Src: img3,
-                    Alt: img3,
-                    Price: 2499.99
-                },
-                {
-                    ProductId: 4,
-                    Count: 2,
-                    Src: img4,
-                    Alt: img4,
-                    Price: 5299.99
-                }
-            ],
-        };
-    }
-
-    handleOperation = (ProductId, Operation) => {
-        var newBasketProducts = this.state.BasketProducts;
-
-        if(Operation === "+") newBasketProducts.map(x => x.ProductId === ProductId ? x.Count = x.Count+1 : x);
-
-        if(Operation === "-") newBasketProducts.map(x => x.ProductId === ProductId ? x.Count = x.Count-1 : x);
-
-        this.setState(() => ({
-            BasketProducts: newBasketProducts
-        }));
-    };
-
-    spliceOperation = (index) => {
-        var newBasketProducts = this.state.BasketProducts;
-
-        newBasketProducts.splice(index,1)
-        this.setState(() => ({
-            BasketProducts: newBasketProducts
-        }));
-    }
-
     renderBasketItem = (item, index) => {
-        const { ProductId, Count, Src, Alt, Price } = item;
-        const totalItemPrice = (Price*Count).toFixed(2)
+        const { productId, count, src, alt, price } = item;
+        const totalItemPrice = (price*count).toFixed(2);
 
         return (
-            <div className="BasketItem" key={ProductId}>
+            <div className="BasketItem" key={productId}>
                 <div className="BasketImage">
-                    <img className="BasketItemImage" src={Src} alt={Alt} />
+                    <img className="BasketItemImage" src={src} alt={alt} />
                 </div>
                 <div>
                     <div className="BasketCounter">
-                        {Count > 1
-                            ? <div className="BasketOperation" onClick={() => this.handleOperation(ProductId, "-")}>-</div>
+                        {count > 1
+                            ? <div className="BasketOperation" onClick={() => this.props.unselectProduct(item)}>-</div>
                             : <div className="BasketItemTrash" onClick={() => {
-                                if (window.confirm('êtes-vous sûr de vouloir supprimer cet élément ?')) this.spliceOperation(index)
+                                if (window.confirm('êtes-vous sûr de vouloir supprimer cet élément ?')) this.props.unselectProduct(item)
                             }}>
                                 <div>
-                                    <span className="icon-bin"></span>
+                                    <span className="icon-bin" />
                                 </div>
                             </div>
                         }
-                        <div className="BasketCount">{Count}</div>
-                        <div className="BasketOperation" onClick={() => this.handleOperation(ProductId,  "+")}>+</div>
+                        <div className="BasketCount">{count}</div>
+                        <div className="BasketOperation" onClick={() => this.props.selectProduct(item)}>+</div>
                         <div className="BasketItemPrice">{totalItemPrice} DH</div>
                     </div>
                     <hr/>
@@ -106,26 +52,26 @@ export default class Basket extends Component {
     }
 
     getTotalPrice = () => {
-        const { BasketProducts } = this.state;
+        const { basketProducts } = this.props;
         var totalPrice = 0;
-        BasketProducts.forEach((element, index) => {
-            totalPrice += element.Count *element.Price;
+        basketProducts.forEach((element, index) => {
+            totalPrice += element.count *element.price;
         });
 
         return totalPrice.toFixed(2);
     }
 
     renderBasketItems = () => {
-        const { BasketProducts } = this.state;
+        const { basketProducts } = this.props;
 
         return (
             <div className="Basket">
-                {!isNilOrEmpty(BasketProducts) ? BasketProducts.map((item, index) => this.renderBasketItem(item,index)) : null}
+                {!isNilOrEmpty(basketProducts) ? basketProducts.map((item, index) => this.renderBasketItem(item,index)) : null}
                 <div className="BasketTotalPrice">Prix total :
                     <div className="TotalPrice">{this.getTotalPrice()} DH</div>
                 </div>
                 <div className="BasketCheck">Valider la commande</div>
-                <div className="BasketCancelation">Annuler la commande</div>
+                <div className="BasketCancelation" onClick={() => this.props.unselectAllProducts()}>Annuler la commande</div>
             </div>
         );
     }
@@ -141,3 +87,21 @@ export default class Basket extends Component {
             null;
     }
 }
+
+function mapStateToProps(state) {
+    return {
+        basketProducts: state.basketProducts
+    };
+}
+
+function mapDispatchToProps(dispatch) {
+    return bindActionCreators(
+            {
+                selectProduct: selectProduct,
+                unselectProduct: unselectProduct,
+                unselectAllProducts: unselectAllProducts
+            },
+        dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Basket);

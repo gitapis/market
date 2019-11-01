@@ -32,3 +32,17 @@ export function selectProduct(Product) {
     payload: Product
   };
 }
+
+export function unselectProduct(index) {
+  return {
+    type: 'UNSELECT_PRODUCT',
+    payload: index
+  };
+}
+
+export function unselectAllProducts() {
+  return {
+    type: 'UNSELECT_ALL_PRODUCTS',
+    payload: null
+  };
+}
