@@ -1,4 +1,4 @@
-import { ErrorType, LoadingType, SuccessType} from '../components/RequestStatus';
+import { ErrorType, LoadingType, SuccessType} from '../components/RequestStatus/index';
 import { 
   GET_PRAYER_TIME_REQUEST,
   GET_PRAYER_TIME_REQUEST_ERROR,
@@ -6,7 +6,7 @@ import {
   GET_PRAYER_TIME_BY_CITY_REQUEST, 
   GET_PRAYER_TIME_BY_CITY_REQUEST_ERROR,
   GET_PRAYER_TIME_BY_CITY_REQUEST_SUCCESS, 
-} from '../API/actions';
+} from '../API/actions/index';
 
 const defaultState = {
     prayerTimeInformations : {

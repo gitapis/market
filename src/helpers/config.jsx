@@ -1,5 +1,5 @@
 import merge from 'ramda/src/merge';
-import { isPathSatisfied, getPath } from './helper';
+import { isPathSatisfied, getPath } from './index';
 
 class Config {
   /**

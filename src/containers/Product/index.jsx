@@ -6,10 +6,10 @@ import Rating from 'react-star-rating-component';
 
 import './styles.css';
 import '../../ressources/Fonts/font.css';
-import { isNilOrEmpty } from '../../helpers/helper';
+import { isNilOrEmpty } from '../../helpers/index';
 import { exact, number, string } from 'prop-types';
-import Price from '../Price';
-import {selectProduct} from "../../actions";
+import Price from '../Price/index';
+import {selectProduct} from "../../actions/index";
 
 class Product extends Component {
     static propTypes = {

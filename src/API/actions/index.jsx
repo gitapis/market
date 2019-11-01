@@ -1,4 +1,4 @@
-import { createAction } from '../../helpers/helper';
+import { createAction } from '../../helpers/index';
 
 export const GET_PRAYER_TIME_REQUEST = 'GET_PRAYER_TIME_REQUEST';
 export const GET_PRAYER_TIME_REQUEST_ERROR = 'GET_PRAYER_TIME_REQUEST_ERROR';

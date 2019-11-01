@@ -3,7 +3,7 @@ import { bool, number, string } from 'prop-types';
 
 import './styles.css';
 import '../../ressources/Fonts/font.css';
-import { isNilOrEmpty } from '../../helpers/helper';
+import { isNilOrEmpty } from '../../helpers/index';
 
 export default class Price extends Component {
     static propTypes = {

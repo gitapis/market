@@ -1,8 +1,8 @@
 import { call, put } from 'redux-saga/effects';
 
-import bffApi from '../API';
+import bffApi from '../API/index';
 import { aladhanUrl } from '../helpers/urls';
-import { getPrayerTimeByCityError, getPrayerTimeByCitySuccess } from '../API/actions';
+import { getPrayerTimeByCityError, getPrayerTimeByCitySuccess } from '../API/actions/index';
 
 export default function* getPrayerTimeByCountryAndCity({ payload }) {
 	try {

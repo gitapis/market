@@ -6,7 +6,7 @@ import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css';
 import './styles.css';
 import '../../ressources/Fonts/font.css';
-import { selectCulture } from '../../actions';
+import { selectCulture } from '../../actions/index';
 
 class Culture extends Component {
 

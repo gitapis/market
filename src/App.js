@@ -5,14 +5,14 @@ import React, { Component } from 'react';
 import './App.css';
 import './ressources/Fonts/font.css';
 import "react-datepicker/dist/react-datepicker.css";
-import { isNilOrEmpty } from './helpers/helper';
-import { getPrayerTimeByCity, getPrayerTime } from './API/actions';
+import { isNilOrEmpty } from './helpers/index';
+import { getPrayerTimeByCity, getPrayerTime } from './API/actions/index';
 // import Culture from './containers/Culture';
 
-import ProductList from './containers/ProductList';
+import ProductList from './containers/ProductList/index';
 import { copyright, getValueByCulture, languages } from './helpers/strings';
-import Menu from "./containers/Menu";
-import Search from "./containers/Search";
+import Menu from "./containers/Menu/index";
+import Search from "./containers/Search/index";
 
 class App extends Component {
 

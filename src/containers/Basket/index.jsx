@@ -3,13 +3,13 @@ import React, { Component } from 'react';
 
 import './styles.css';
 import '../../ressources/Fonts/font.css';
-import {isNilOrEmpty} from "../../helpers/helper";
+import {isNilOrEmpty} from "../../helpers/index";
 import {bindActionCreators} from "redux";
 import {
     selectProduct,
     unselectProduct,
     unselectAllProducts
-} from "../../actions";
+} from "../../actions/index";
 import {connect} from "react-redux";
 import trash from "../../ressources/images/trash.svg";
 

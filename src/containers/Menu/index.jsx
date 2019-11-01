@@ -15,7 +15,7 @@ import logout from '../../ressources/images/logout.svg';
 import orders from '../../ressources/images/shopping-bag.svg';
 import menu from '../../ressources/images/menu.svg';
 import user from '../../ressources/images/user.svg';
-import Basket from '../Basket';
+import Basket from '../Basket/index';
 
 export default class Menu extends Component {
     static defaultProps = {

@@ -1,4 +1,4 @@
-import { isNilOrEmpty } from "./helper";
+import { isNilOrEmpty } from "./index";
 import nikon from './../ressources/images/nikon-d7500.jpg';
 import drone from './../ressources/images/drone-r-falcon.jpg';
 import hp from './../ressources/images/hp.jpg';

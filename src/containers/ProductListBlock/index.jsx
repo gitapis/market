@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import 'react-dropdown/style.css';
 import './styles.css';
 import '../../ressources/Fonts/font.css';
-import Product from '../Product';
+import Product from '../Product/index';
 import nikon from '../../ressources/images/nikon-d7500.jpg';
 
 
