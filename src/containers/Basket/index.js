@@ -21,7 +21,7 @@ class Basket extends Component {
         displayBasket: PropTypes.bool,
     };
 
-    renderBasketItem = (item, index) => {
+    renderBasketItem = (item) => {
         const { productId, count, src, alt, price } = item;
         const totalItemPrice = (price*count).toFixed(2);
 
@@ -49,24 +49,24 @@ class Basket extends Component {
                     <hr/>
                 </div>
             </div>);
-    }
+    };
 
     getTotalPrice = () => {
         const { basketProducts } = this.props;
-        var totalPrice = 0;
-        basketProducts.forEach((element, index) => {
+        let totalPrice = 0;
+        basketProducts.forEach(element => {
             totalPrice += element.count *element.price;
         });
 
         return totalPrice.toFixed(2);
-    }
+    };
 
     renderBasketItems = () => {
         const { basketProducts } = this.props;
 
         return (
             <div className="Basket">
-                {!isNilOrEmpty(basketProducts) ? basketProducts.map((item, index) => this.renderBasketItem(item,index)) : null}
+                {!isNilOrEmpty(basketProducts) ? basketProducts.map(item => this.renderBasketItem(item)) : null}
                 <div className="BasketTotalPrice">Prix total :
                     <div className="TotalPrice">{this.getTotalPrice()} DH</div>
                 </div>
@@ -74,7 +74,7 @@ class Basket extends Component {
                 <div className="BasketCancelation" onClick={() => this.props.unselectAllProducts()}>Annuler la commande</div>
             </div>
         );
-    }
+    };
 
     render() {
         const { displayBasket } = this.props;
