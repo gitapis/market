@@ -56,7 +56,7 @@ class Product extends Component {
     renderTitle = () => {
         const { title } = this.props.product;
 
-        return <h4 style={{ margin : '0px'}}>{title.toUpperCase()}</h4>;
+        return <h2 style={{ margin : '0px'}}>{title.toUpperCase()}</h2>;
     };
 
     renderRating = () => {
@@ -113,17 +113,18 @@ class Product extends Component {
                                 {this.renderOldPrice()}
                                 {this.renderPrice()}
                             </div>
-                            <div>
+                            <div className="descriptionContainer">
                                 {this.renderDescription()}
+                            </div>
+                            <div onClick={() => this.props.selectProduct(product)}>
+                                <div className="addButton">
+                                    Ajouter au panier
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div onClick={() => this.props.selectProduct(product)}>
-                    <div className="addButton">
-                        Ajouter au panier
-                    </div>
-                </div>
+
                 <hr/>
             </div>
         );

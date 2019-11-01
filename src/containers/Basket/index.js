@@ -11,6 +11,7 @@ import {
     unselectAllProducts
 } from "../../actions";
 import {connect} from "react-redux";
+import trash from "../../ressources/images/trash.svg";
 
 class Basket extends Component {
     static defaultProps = {
@@ -38,7 +39,8 @@ class Basket extends Component {
                                 if (window.confirm('êtes-vous sûr de vouloir supprimer cet élément ?')) this.props.unselectProduct(item)
                             }}>
                                 <div>
-                                    <span className="icon-bin" />
+                                    <img className="MenuItemIcon" src={trash} alt={trash} />
+                                    <span className="icon-bin"></span>
                                 </div>
                             </div>
                         }

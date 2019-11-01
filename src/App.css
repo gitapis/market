@@ -1,6 +1,5 @@
 .App {
   text-align: center;
-  font-family: 'AraJozoor-Regular',Sans-Serif;
   width: 100%;
 }
 
@@ -34,7 +33,6 @@
 
 .App-body {
   text-align: center;
-  font-family: 'Verdana, Geneva, sans-serif';
   background-color: #ffffff;
   display: flex;
   flex-direction: column;
