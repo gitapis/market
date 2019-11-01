@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "a51b4400ba150544548735287c5511a5",
+    "revision": "1bb04ea968c7aff839bb1a1239787fe9",
     "url": "/market/index.html"
   },
   {
-    "revision": "ac3add4293ae9fa97e73",
+    "revision": "ebcd9a210a45133bc164",
     "url": "/market/static/css/2.918ee801.chunk.css"
   },
   {
-    "revision": "9dc4a1f942e3902ef37e",
-    "url": "/market/static/css/main.c154e898.chunk.css"
+    "revision": "32ffc5c766d0cf668d79",
+    "url": "/market/static/css/main.ad3e746c.chunk.css"
   },
   {
-    "revision": "ac3add4293ae9fa97e73",
-    "url": "/market/static/js/2.d44f9b96.chunk.js"
+    "revision": "ebcd9a210a45133bc164",
+    "url": "/market/static/js/2.0ba768f2.chunk.js"
   },
   {
-    "revision": "9dc4a1f942e3902ef37e",
-    "url": "/market/static/js/main.9ee2331b.chunk.js"
+    "revision": "32ffc5c766d0cf668d79",
+    "url": "/market/static/js/main.b7eb5014.chunk.js"
   },
   {
     "revision": "e47acf3897170b4aaa20",
@@ -44,8 +44,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/market/static/media/at-sign.006caf8b.svg"
   },
   {
-    "revision": "c36402d4130bad81701903c89c0e4416",
-    "url": "/market/static/media/drone-r-falcon.c36402d4.jpg"
+    "revision": "38fcc1390d5dcd8d992ffd068c285e03",
+    "url": "/market/static/media/drone-r-falcon.38fcc139.jpg"
   },
   {
     "revision": "55644be0d4a9382b8f1b58830cd536c6",
@@ -98,6 +98,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "d03a9e65253f18385cba600baa4befd3",
     "url": "/market/static/media/shopping.d03a9e65.svg"
+  },
+  {
+    "revision": "108e2b181134821f209211622b4ffba7",
+    "url": "/market/static/media/trash.108e2b18.svg"
   },
   {
     "revision": "ed52f187b2c4aad7fd02765c9cdc2f92",
