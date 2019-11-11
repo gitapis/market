@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1bb04ea968c7aff839bb1a1239787fe9",
+    "revision": "0c517445862b546656e96d48cdca191c",
     "url": "/market/index.html"
   },
   {
-    "revision": "ebcd9a210a45133bc164",
-    "url": "/market/static/css/2.918ee801.chunk.css"
+    "revision": "e1b09b3064290593894c",
+    "url": "/market/static/css/2.5db44fde.chunk.css"
   },
   {
-    "revision": "32ffc5c766d0cf668d79",
-    "url": "/market/static/css/main.ad3e746c.chunk.css"
+    "revision": "0a9c8a012f9cf7caef12",
+    "url": "/market/static/css/main.f5e58490.chunk.css"
   },
   {
-    "revision": "ebcd9a210a45133bc164",
-    "url": "/market/static/js/2.0ba768f2.chunk.js"
+    "revision": "e1b09b3064290593894c",
+    "url": "/market/static/js/2.c085e229.chunk.js"
   },
   {
-    "revision": "32ffc5c766d0cf668d79",
-    "url": "/market/static/js/main.b7eb5014.chunk.js"
+    "revision": "0a9c8a012f9cf7caef12",
+    "url": "/market/static/js/main.26fa6e28.chunk.js"
   },
   {
     "revision": "e47acf3897170b4aaa20",
@@ -88,8 +88,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/market/static/media/nikon-d7500.8225c1b0.jpg"
   },
   {
-    "revision": "1c636eaa1470c1f487d5baf9506a25f5",
-    "url": "/market/static/media/search.1c636eaa.svg"
+    "revision": "598b815fb3ffdfd0562b3d20ea337048",
+    "url": "/market/static/media/search.598b815f.svg"
   },
   {
     "revision": "dd75d8007592eb3928c3691e2d251294",
@@ -100,8 +100,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/market/static/media/shopping.d03a9e65.svg"
   },
   {
-    "revision": "108e2b181134821f209211622b4ffba7",
-    "url": "/market/static/media/trash.108e2b18.svg"
+    "revision": "aabbbaf1b1c50fca0223d0708d87ad17",
+    "url": "/market/static/media/trash.aabbbaf1.svg"
   },
   {
     "revision": "ed52f187b2c4aad7fd02765c9cdc2f92",
