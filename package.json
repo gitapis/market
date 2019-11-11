@@ -1,7 +1,7 @@
 {
   "name": "market",
   "version": "0.1.0",
-  "homepage": "https://hash-tags.github.io/market/",
+  "homepage": "https://gitapis.github.io/market/",
   "private": true,
   "dependencies": {
     "axios": "0.19.0",
@@ -24,7 +24,8 @@
     "react-transition-group": "^4.3.0",
     "redux": "^4.0.1",
     "redux-saga": "^1.0.2",
-    "set-value": "3.0.1"
+    "set-value": "3.0.1",
+    "prop-types": "latest"
   },
   "scripts": {
     "predeploy": "npm run build",
