@@ -4,8 +4,7 @@ import React, { Component } from 'react';
 import {
     BrowserRouter as Router,
     Switch,
-    Route,
-    Link
+    Route
 } from "react-router-dom";
 
 import './App.css';
@@ -92,22 +91,6 @@ class App extends Component {
         );
     };
 
-    renderBody = () => {
-        const { isBlackBackgroundDisplayed } = this.state;
-
-        return (
-            <div className={isBlackBackgroundDisplayed ? "BlackBackground" : ""} onClick={isBlackBackgroundDisplayed ? () => this.handleCloseAll(): undefined}>
-                <div className={isBlackBackgroundDisplayed ? "App-body disabledbutton" : "App-body"}>
-                    <div className="App-Container">
-                        <div className="App-block">
-                            <ProductList />
-                        </div>
-                    </div>
-                </div>
-            </div>
-        );
-    };
-
     renderFooter = () => {
         const { culture } = this.props;
 
@@ -120,36 +103,57 @@ class App extends Component {
         );
     };
 
+    renderDisconnectBody = () => <h2>Se déconnecter</h2>;
+
+    renderConnectBody = () => <h2>Se connecter</h2>;
+
+    renderLegalNoticeBody = () => <h2>Mentions légales</h2>;
+
+    renderMyAccountBody = () => <h2>Mon compte</h2>;
+
+    renderOrdersBody = () => <h2>Mes commandes</h2>;
+
+    renderCategoriesBody = () => <h2>Toutes les catégories</h2>;
+
+    renderHomeBody = () => {
+        return (
+            <div className="App-Container">
+                <div className="App-block">
+                    <ProductList />
+                </div>
+            </div>
+        );
+    };
+
+    renderRoute = (route, isHeaderEnabled, bodyContent, isFooterEnabled) => {
+        const { isBlackBackgroundDisplayed } = this.state;
+
+        return (
+            <Route path={route}>
+                <div className="App">
+                    {isHeaderEnabled ? this.renderHeader() : null}
+                    <div className={isBlackBackgroundDisplayed ? "BlackBackground" : ""} onClick={isBlackBackgroundDisplayed ? () => this.handleCloseAll(): undefined}>
+                        <div className={isBlackBackgroundDisplayed ? "App-body disabledbutton" : "App-body"}>
+                            <div>{bodyContent}</div>
+                        </div>
+                    </div>
+                    {isFooterEnabled ? this.renderFooter() : null}
+                </div>
+            </Route>
+        );
+    }
+
     render() {
         return (
             <Router>
-                <nav className="Nav">
-                    <ul>
-                        <li>
-                            <Link to="/">Home</Link>
-                        </li>
-                        <li>
-                            <Link to="/shelves">Tous les rayons</Link>
-                        </li>
-                    </ul>
-                </nav>
                 <Switch>
-                    <Route path="/shelves">
-                        <div className="App">
-                            {this.renderHeader()}
-                            <div>
-                                <h2>Contact</h2>
-                            </div>
-                            {this.renderFooter()}
-                        </div>
-                    </Route>
-                    <Route path="/">
-                        <div className="App">
-                            {this.renderHeader()}
-                            {this.renderBody()}
-                            {this.renderFooter()}
-                        </div>
-                    </Route>
+                    {this.renderRoute("/disconnect", true, this.renderDisconnectBody(),true)}
+                    {this.renderRoute("/connect", true, this.renderConnectBody() ,true)}
+                    {this.renderRoute("/legalNotice", true, this.renderLegalNoticeBody() ,true)}
+                    {this.renderRoute("/myAccount", true, this.renderMyAccountBody()  ,true)}
+                    {this.renderRoute("/orders", true, this.renderOrdersBody() ,true)}
+                    {this.renderRoute("/categories", true, this.renderCategoriesBody() ,true)}
+                    {this.renderRoute("/", true, this.renderHomeBody() ,true)}
                 </Switch>
             </Router>
         )

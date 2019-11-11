@@ -73,41 +73,41 @@ export default class Menu extends Component {
                                     {"Accueil"}
                                 </div>
                             </Link>
-                            <Link to="/shelves" onClick={() => this.props.onClose()}>
+                            <Link to="/categories" onClick={() => this.props.onClose()}>
                                 <div className="MenuItem">
                                     <img className="MenuItemIcon" src={list} alt={list} />
-                                    {"Tous les rayons"}
+                                    {"Toutes les catégories"}
                                 </div>
                             </Link>
                             <hr/>
-                            <Link to="/shelves" onClick={() => this.props.onClose()}>
+                            <Link to="/orders" onClick={() => this.props.onClose()}>
                                 <div className="MenuItem">
                                     <img className="MenuItemIcon" src={orders} alt={orders} />
                                     {"Mes commandes"}
                                 </div>
                             </Link>
-                            <Link to="/shelves" onClick={() => this.props.onClose()}>
+                            <Link to="/myAccount" onClick={() => this.props.onClose()}>
                                 <div className="MenuItem">
                                     <img className="MenuItemIcon" src={user} alt={user} />
                                     {"Mon compte"}
                                 </div>
                             </Link>
                             <hr />
-                            <Link to="/shelves" onClick={() => this.props.onClose()}>
+                            <Link to="/legalNotice" onClick={() => this.props.onClose()}>
                                 <div className="MenuItem">
                                     <img className="MenuItemIcon" src={atSign} alt={atSign} />
                                     {"Mentions légales"}
                                 </div>
                             </Link>
                             {isConnected ?
-                                <Link to="/shelves" onClick={() => this.props.onClose()}>
+                                <Link to="/connect" onClick={() => this.props.onClose()}>
                                     <div className="MenuItem">
                                         <img className="MenuItemIcon" src={login} alt={login} />
                                         {"Se connecter"}
                                     </div>
                                 </Link>
                                 :
-                                <Link to="/shelves" onClick={() => this.props.onClose()}>
+                                <Link to="/disconnect" onClick={() => this.props.onClose()}>
                                     <div className="MenuItem">
                                         <img className="MenuItemIcon" src={logout} alt={logout} />
                                         {"Se déconnecter"}
