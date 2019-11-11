@@ -16,6 +16,7 @@ import orders from '../../ressources/images/shopping-bag.svg';
 import menu from '../../ressources/images/menu.svg';
 import user from '../../ressources/images/user.svg';
 import Basket from '../Basket/index';
+import {Link} from "react-router-dom";
 
 export default class Menu extends Component {
     static defaultProps = {
@@ -66,38 +67,52 @@ export default class Menu extends Component {
                             <img className="close" src={close} alt={close} onClick={() => this.props.onClose()} />
                         </div>
                         <div className="MenuItems">
-                            <div className="MenuItem">
-                                <img className="MenuItemIcon" src={home} alt={home} />
-                                {"Accueil"}
-                            </div>
-                            <div className="MenuItem">
-                                <img className="MenuItemIcon" src={list} alt={list} />
-                                {"Tous les rayons"}
-                            </div>
+                            <Link to="/" onClick={() => this.props.onClose()}>
+                                <div className="MenuItem">
+                                    <img className="MenuItemIcon" src={home} alt={home} />
+                                    {"Accueil"}
+                                </div>
+                            </Link>
+                            <Link to="/shelves" onClick={() => this.props.onClose()}>
+                                <div className="MenuItem">
+                                    <img className="MenuItemIcon" src={list} alt={list} />
+                                    {"Tous les rayons"}
+                                </div>
+                            </Link>
                             <hr/>
-                            <div className="MenuItem">
-                                <img className="MenuItemIcon" src={orders} alt={orders} />
-                                {"Mes commandes"}
-                            </div>
-                            <div className="MenuItem">
-                                <img className="MenuItemIcon" src={user} alt={user} />
-                                {"Mon compte"}
-                            </div>
+                            <Link to="/shelves" onClick={() => this.props.onClose()}>
+                                <div className="MenuItem">
+                                    <img className="MenuItemIcon" src={orders} alt={orders} />
+                                    {"Mes commandes"}
+                                </div>
+                            </Link>
+                            <Link to="/shelves" onClick={() => this.props.onClose()}>
+                                <div className="MenuItem">
+                                    <img className="MenuItemIcon" src={user} alt={user} />
+                                    {"Mon compte"}
+                                </div>
+                            </Link>
                             <hr />
-                            <div className="MenuItem">
-                                <img className="MenuItemIcon" src={atSign} alt={atSign} />
-                                {"Mentions légales"}
-                            </div>
+                            <Link to="/shelves" onClick={() => this.props.onClose()}>
+                                <div className="MenuItem">
+                                    <img className="MenuItemIcon" src={atSign} alt={atSign} />
+                                    {"Mentions légales"}
+                                </div>
+                            </Link>
                             {isConnected ?
-                                <div className="MenuItem">
-                                    <img className="MenuItemIcon" src={login} alt={login} />
-                                    {"Se connecter"}
-                                </div>
+                                <Link to="/shelves" onClick={() => this.props.onClose()}>
+                                    <div className="MenuItem">
+                                        <img className="MenuItemIcon" src={login} alt={login} />
+                                        {"Se connecter"}
+                                    </div>
+                                </Link>
                                 :
-                                <div className="MenuItem">
-                                    <img className="MenuItemIcon" src={logout} alt={logout} />
-                                    {"Se déconnecter"}
-                                </div>
+                                <Link to="/shelves" onClick={() => this.props.onClose()}>
+                                    <div className="MenuItem">
+                                        <img className="MenuItemIcon" src={logout} alt={logout} />
+                                        {"Se déconnecter"}
+                                    </div>
+                                </Link>
                             }
                         </div>
                     </div>

@@ -40,7 +40,7 @@ class Basket extends Component {
                             }}>
                                 <div>
                                     <img className="MenuItemIcon" src={trash} alt={trash} />
-                                    <span className="icon-bin"></span>
+                                    <span className="icon-bin"/>
                                 </div>
                             </div>
                         }

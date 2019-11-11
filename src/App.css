@@ -79,3 +79,7 @@
   font-weight:bold;
   direction:ltr;
 }
+
+.Nav{
+  display: none;
+}

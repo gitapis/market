@@ -14,7 +14,7 @@ class Culture extends Component {
     // const selectedCulture = this.getCountry(culture);
 
     this.props.selectCulture(culture.value);
-  }
+  };
 
   render() {
     return (

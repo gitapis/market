@@ -1,6 +1,12 @@
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import React, { Component } from 'react';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+} from "react-router-dom";
 
 import './App.css';
 import './ressources/Fonts/font.css';
@@ -116,11 +122,36 @@ class App extends Component {
 
     render() {
         return (
-            <div className="App">
-                {this.renderHeader()}
-                {this.renderBody()}
-                {this.renderFooter()}
-            </div>
+            <Router>
+                <nav className="Nav">
+                    <ul>
+                        <li>
+                            <Link to="/">Home</Link>
+                        </li>
+                        <li>
+                            <Link to="/shelves">Tous les rayons</Link>
+                        </li>
+                    </ul>
+                </nav>
+                <Switch>
+                    <Route path="/shelves">
+                        <div className="App">
+                            {this.renderHeader()}
+                            <div>
+                                <h2>Contact</h2>
+                            </div>
+                            {this.renderFooter()}
+                        </div>
+                    </Route>
+                    <Route path="/">
+                        <div className="App">
+                            {this.renderHeader()}
+                            {this.renderBody()}
+                            {this.renderFooter()}
+                        </div>
+                    </Route>
+                </Switch>
+            </Router>
         )
     }
 }
