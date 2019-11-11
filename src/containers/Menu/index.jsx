@@ -128,11 +128,11 @@ export default class Menu extends Component {
             <div className="container">
                 <div className="MenuContainer">
                     <img className="Image1" src={menu} alt={menu} onClick={() => onClose()}/>
-                    <span className="Title">MARKET</span>
+                    <Link className="Title" to="/">MARKET</Link>
                     <img className="Image2" src={connect} alt={connect} />
                     <img className="Image3" src={basket} alt={basket} onClick={() => this.handleDisplayBasket()} />
                 </div>
-                <Basket displayBasket={displayBasket}/>
+                <Basket onCloseBasket={() => this.handleDisplayBasket()}  displayBasket={displayBasket}/>
                 <div>
                     {this.renderContent()}
                 </div>

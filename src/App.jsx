@@ -103,6 +103,8 @@ class App extends Component {
         );
     };
 
+    renderBaskettBody = () => <h2>Basket</h2>;
+
     renderDisconnectBody = () => <h2>Se déconnecter</h2>;
 
     renderConnectBody = () => <h2>Se connecter</h2>;
@@ -147,6 +149,7 @@ class App extends Component {
         return (
             <Router>
                 <Switch>
+                    {this.renderRoute("/basket", true, this.renderBaskettBody(),true)}
                     {this.renderRoute("/disconnect", true, this.renderDisconnectBody(),true)}
                     {this.renderRoute("/connect", true, this.renderConnectBody() ,true)}
                     {this.renderRoute("/legalNotice", true, this.renderLegalNoticeBody() ,true)}

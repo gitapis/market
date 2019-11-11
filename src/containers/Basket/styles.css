@@ -21,9 +21,11 @@
 .BasketCheck {
     background-color: #ffc82e;
     border-radius: 7px;
+    color: #000;
     cursor: pointer;
     margin: 5px 0;
     text-align: center;
+    text-decoration-line: none;
     width: 70%;
 }
 

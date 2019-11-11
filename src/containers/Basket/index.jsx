@@ -12,14 +12,17 @@ import {
 } from "../../actions/index";
 import {connect} from "react-redux";
 import trash from "../../ressources/images/trash.svg";
+import {Link} from "react-router-dom";
 
 class Basket extends Component {
     static defaultProps = {
         displayBasket: false,
+        onCloseBasket: () => {}
     };
 
     static propTypes = {
         displayBasket: PropTypes.bool,
+        onCloseBasket: PropTypes.func
     };
 
     renderBasketItem = (item) => {
@@ -63,6 +66,11 @@ class Basket extends Component {
         return totalPrice.toFixed(2);
     };
 
+    handleCancelClick = () => {
+        this.props.unselectAllProducts();
+        this.props.onCloseBasket();
+    };
+
     renderBasketItems = () => {
         const { basketProducts } = this.props;
 
@@ -72,8 +80,10 @@ class Basket extends Component {
                 <div className="BasketTotalPrice">Prix total :
                     <div className="TotalPrice">{this.getTotalPrice()} DH</div>
                 </div>
-                <div className="BasketCheck">Valider la commande</div>
-                <div className="BasketCancelation" onClick={() => this.props.unselectAllProducts()}>Annuler la commande</div>
+                <Link to="/basket" onClick={() => this.props.onCloseBasket()}>
+                    <div className="BasketCheck">Valider la commande</div>
+                </Link>
+                <div className="BasketCancelation" onClick={() => this.handleCancelClick()}>Annuler la commande</div>
             </div>
         );
     };

@@ -15,6 +15,7 @@
 
 .container {
     text-align: -webkit-center;
+    height: 38px;
 }
 
 .MenuContainer {
@@ -81,14 +82,12 @@
 }
 
 .Title {
+    position: relative;
     color: white;
     font-size: x-large;
-    left: 0;
-    position: absolute;
     top: -5px;
     vertical-align: middle;
-    width: 100%;
-    z-index: -1;
+    text-decoration-line: none;
 }
 
 .Overlayer-enter {
