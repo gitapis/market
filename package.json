@@ -5,10 +5,10 @@
   "private": true,
   "dependencies": {
     "axios": "0.19.0",
+    "dotenv": "^8.2.0",
     "gh-pages": "^2.1.1",
     "lodash.template": "4.5.0",
     "mixin-deep": "2.0.1",
-    "nodemailer": "^6.3.1",
     "prop-types": "latest",
     "ramda": "^0.26.1",
     "react": "^16.8.3",

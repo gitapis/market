@@ -12,6 +12,7 @@ import './ressources/Fonts/font.css';
 import "react-datepicker/dist/react-datepicker.css";
 import { isNilOrEmpty } from './helpers/index';
 import { getPrayerTimeByCity, getPrayerTime } from './API/actions/index';
+import Mail from './containers/Mail';
 // import Culture from './containers/Culture';
 
 import ProductList from './containers/ProductList/index';
@@ -103,7 +104,13 @@ class App extends Component {
         );
     };
 
-    renderBaskettBody = () => <h2>Basket</h2>;
+    renderBaskettBody = () => {
+        return (
+            <div>
+                <h2>Basket</h2>
+                <Mail />
+            </div>)
+    };
 
     renderDisconnectBody = () => <h2>Se déconnecter</h2>;
 
