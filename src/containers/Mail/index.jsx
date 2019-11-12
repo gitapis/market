@@ -6,14 +6,14 @@ import './styles.css';
 class Mail extends Component {
     constructor(props) {
         super(props);
-        this.state = { feedback: '', name: 'Anas', email: '' };
+        this.state = { feedback: '', name: 'Anas', email: '', isSent: false };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-    }
+    };
 
     handleChange(event) {
         this.setState({email: event.target.value})
-    }
+    };
 
     handleSubmit() {
         const { basketProducts } = this.props;
@@ -32,7 +32,7 @@ class Mail extends Component {
             } else {
                 const serviceId = 'Support';
                 const templateId = 'template2';
-                const html = `<div>Le montant de votre commande est : <b>${totalPrice} DH</b></div>`;
+                const html = `<div>Le montant de votre commande est : <b>${totalPrice.toFixed(2)} DH</b></div>`;
                 const variables = {
                     message_html: html,
                     from_name: 'Market support service',
@@ -44,24 +44,37 @@ class Mail extends Component {
                 this.sendFeedback(serviceId, templateId, variables);
             }
         }
+    };
 
-    }
+    getOperationStatus = () => {
+        this.setState({
+            isSent: !this.state.isSent
+        });
+    };
 
     sendFeedback (serviceId, templateId, variables) {
-        console.log(this.state);
         window.emailjs.send(
             serviceId, templateId, variables
         ).then(res => {
-            console.log('Email successfully sent!', res)
+            console.log('Email successfully sent!', res);
+            this.getOperationStatus();
         })
             .catch(err => {
-                console.error('Oh well, you failed. Here some thoughts on the error that occured:', err)
+                console.error('Oh well, you failed. Here some thoughts on the error that occured:', err);
+                this.getOperationStatus();
             })
-    }
+    };
 
     render() {
-        return (
-            <form>
+        const { isSent } = this.state;
+
+        if(isSent) {
+            return (<div className="FormContainer">
+                Un email de validation de la commande a été envoyée avec succès !
+            </div>)
+        }
+
+        return(<form>
                 <div className="FormContainer">
                     Entrer votre adresse mail: <input className="Email" type="email" onChange={this.handleChange} required/>
                 </div>
@@ -69,9 +82,8 @@ class Mail extends Component {
                 <div className="Submit" onClick={this.handleSubmit}>
                     Valider votre commande
                 </div>
-            </form>
-        )
-    }
+            </form>)
+    };
 }
 
 function mapStateToProps(state) {
