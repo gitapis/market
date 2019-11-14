@@ -67,47 +67,47 @@ export default class Menu extends Component {
                             <img className="close" src={close} alt={close} onClick={() => this.props.onClose()} />
                         </div>
                         <div className="MenuItems">
-                            <Link to="/" onClick={() => this.props.onClose()}>
+                            <Link to="/market" onClick={() => this.props.onClose()}>
                                 <div className="MenuItem">
                                     <img className="MenuItemIcon" src={home} alt={home} />
                                     {"Accueil"}
                                 </div>
                             </Link>
-                            <Link to="/categories" onClick={() => this.props.onClose()}>
+                            <Link to="/market/categories" onClick={() => this.props.onClose()}>
                                 <div className="MenuItem">
                                     <img className="MenuItemIcon" src={list} alt={list} />
                                     {"Toutes les catégories"}
                                 </div>
                             </Link>
                             <hr/>
-                            <Link to="/orders" onClick={() => this.props.onClose()}>
+                            <Link to="/market/orders" onClick={() => this.props.onClose()}>
                                 <div className="MenuItem">
                                     <img className="MenuItemIcon" src={orders} alt={orders} />
                                     {"Mes commandes"}
                                 </div>
                             </Link>
-                            <Link to="/myAccount" onClick={() => this.props.onClose()}>
+                            <Link to="/market/myAccount" onClick={() => this.props.onClose()}>
                                 <div className="MenuItem">
                                     <img className="MenuItemIcon" src={user} alt={user} />
                                     {"Mon compte"}
                                 </div>
                             </Link>
                             <hr />
-                            <Link to="/legalNotice" onClick={() => this.props.onClose()}>
+                            <Link to="/market/legalNotice" onClick={() => this.props.onClose()}>
                                 <div className="MenuItem">
                                     <img className="MenuItemIcon" src={atSign} alt={atSign} />
                                     {"Mentions légales"}
                                 </div>
                             </Link>
                             {isConnected ?
-                                <Link to="/connect" onClick={() => this.props.onClose()}>
+                                <Link to="/market/connect" onClick={() => this.props.onClose()}>
                                     <div className="MenuItem">
                                         <img className="MenuItemIcon" src={login} alt={login} />
                                         {"Se connecter"}
                                     </div>
                                 </Link>
                                 :
-                                <Link to="/disconnect" onClick={() => this.props.onClose()}>
+                                <Link to="/market/disconnect" onClick={() => this.props.onClose()}>
                                     <div className="MenuItem">
                                         <img className="MenuItemIcon" src={logout} alt={logout} />
                                         {"Se déconnecter"}
@@ -128,7 +128,7 @@ export default class Menu extends Component {
             <div className="container">
                 <div className="MenuContainer">
                     <img className="Image1" src={menu} alt={menu} onClick={() => onClose()}/>
-                    <Link className="Title" to="/">MARKET</Link>
+                    <Link className="Title" to="/market">MARKET</Link>
                     <img className="Image2" src={connect} alt={connect} />
                     <img className="Image3" src={basket} alt={basket} onClick={() => this.handleDisplayBasket()} />
                 </div>

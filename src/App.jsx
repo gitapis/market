@@ -156,13 +156,14 @@ class App extends Component {
         return (
             <Router>
                 <Switch>
-                    {this.renderRoute("/basket", true, this.renderBaskettBody(),true)}
-                    {this.renderRoute("/disconnect", true, this.renderDisconnectBody(),true)}
-                    {this.renderRoute("/connect", true, this.renderConnectBody() ,true)}
-                    {this.renderRoute("/legalNotice", true, this.renderLegalNoticeBody() ,true)}
-                    {this.renderRoute("/myAccount", true, this.renderMyAccountBody()  ,true)}
-                    {this.renderRoute("/orders", true, this.renderOrdersBody() ,true)}
-                    {this.renderRoute("/categories", true, this.renderCategoriesBody() ,true)}
+                    {this.renderRoute("/market/basket", true, this.renderBaskettBody(),true)}
+                    {this.renderRoute("/market/disconnect", true, this.renderDisconnectBody(),true)}
+                    {this.renderRoute("/market/connect", true, this.renderConnectBody() ,true)}
+                    {this.renderRoute("/market/legalNotice", true, this.renderLegalNoticeBody() ,true)}
+                    {this.renderRoute("/market/myAccount", true, this.renderMyAccountBody()  ,true)}
+                    {this.renderRoute("/market/orders", true, this.renderOrdersBody() ,true)}
+                    {this.renderRoute("/market/categories", true, this.renderCategoriesBody() ,true)}
+                    {this.renderRoute("/market", true, this.renderHomeBody() ,true)}
                     {this.renderRoute("/", true, this.renderHomeBody() ,true)}
                 </Switch>
             </Router>

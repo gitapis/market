@@ -80,7 +80,7 @@ class Basket extends Component {
                 <div className="BasketTotalPrice">Prix total :
                     <div className="TotalPrice">{this.getTotalPrice()} DH</div>
                 </div>
-                <Link to="/basket" onClick={() => this.props.onCloseBasket()}>
+                <Link to="/market/basket" onClick={() => this.props.onCloseBasket()}>
                     <div className="BasketCheck">Valider la commande</div>
                 </Link>
                 <div className="BasketCancelation" onClick={() => this.handleCancelClick()}>Annuler la commande</div>
