@@ -30,24 +30,19 @@ class Account extends Component {
         return (
             <form>
                 <div>
-                    {/*<div className="InputText">Full Name: </div>*/}
                     <input className="Input" type="text" onChange={this.handleChange} placeholder="First Name" required/>
                     <input className="Input" type="text" onChange={this.handleChange} placeholder="Last Name" required/>
                 </div>
                 <div>
-                    {/*<div className="InputText">Email:</div>*/}
                     <input className="Input" type="email" onChange={this.handleChange} placeholder="Email" required/>
                 </div>
                 <div>
-                    {/*<div className="InputText">Phone:</div>*/}
                     <input className="Input" type="tel" onChange={this.handleChange} placeholder="Phone number" required/>
                 </div>
                 <div>
-                    {/*<div className="InputText">Username: </div>*/}
                     <input className="Input" type="text" onChange={this.handleChange} placeholder="Username" required/>
                 </div>
                 <div>
-                    {/*<div className="InputText">Password: </div>*/}
                     <input className="Input" type="password" onChange={this.handleChange} placeholder="Password" required/>
                     <input className="Input" type="password" onChange={this.handleChange} placeholder="Confirm password" required/>
                 </div>

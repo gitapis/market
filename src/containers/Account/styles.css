@@ -15,7 +15,9 @@
 }
 
 .Submit {
-    background-color: #4CAF50;
+    background-color: #ffc82e;
+    color: black;
+    font-weight: bold;
     width: 270px;
     padding: 8px 20px;
     margin: 8px 8px;
@@ -23,17 +25,4 @@
     border: 1px solid #ccc;
     border-radius: 5px;
     box-sizing: border-box;
-}
-
-.Submit:hover {
-    background-color: #45a049;
-}
-
-.FormContainer {
-    font-size: larger;
-    font-feature-settings: "pcap";
-    font-variant: petite-caps;
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 20px;
 }

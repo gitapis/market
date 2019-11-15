@@ -90,19 +90,21 @@ class Mail extends Component {
         }
 
         if(isSent) {
-            return (<div className="FormContainer">
-                Un email de validation de la commande a été envoyée avec succès !
+            return (<div>
+                <p>Un email de validation de la commande a été envoyée avec succès !</p>
+                <p>Merci de patienter un moment, le temps qu'un agent prend en charge votre commande.</p>
             </div>)
         }
 
         return(<form>
-                <div className="FormContainer">
-                    Entrer votre adresse mail: <input className="Email" type="email" onChange={this.handleChange} required/>
+                <div>
+                    <input className="Email" type="email" onChange={this.handleChange} placeholder="Email" required/>
                 </div>
                 <br/>
                 <div className="Submit" onClick={this.handleSubmit}>
-                    Valider votre commande
+                    Enoyer
                 </div>
+                <div><p>Vous allez recevoir un email de validation de votre commande</p></div>
             </form>)
     };
 }
