@@ -137,12 +137,7 @@ class App extends Component {
 
     renderSubscribeBody = () => {
       return (
-          <div style={
-              {
-                  'textAlign' : 'start',
-                  'width' : '100%'
-              }
-          }>
+          <div style={ {'width' : '100%'}}>
               <h2>S'inscrire</h2>
               <Account />
           </div>);
