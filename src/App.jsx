@@ -19,6 +19,7 @@ import ProductList from './containers/ProductList/index';
 import { copyright, getValueByCulture, languages } from './helpers/strings';
 import Menu from "./containers/Menu/index";
 import Search from "./containers/Search/index";
+import Account from "./containers/Account";
 
 class App extends Component {
 
@@ -114,7 +115,7 @@ class App extends Component {
 
     renderDisconnectBody = () => <h2>Se déconnecter</h2>;
 
-    renderConnectBody = () => <h2>Se connecter</h2>;
+    renderConnectBody = () =>  <h2>Se connecter</h2>;
 
     renderLegalNoticeBody = () => <h2>Mentions légales</h2>;
 
@@ -134,6 +135,19 @@ class App extends Component {
         );
     };
 
+    renderSubscribeBody = () => {
+      return (
+          <div style={
+              {
+                  'textAlign' : 'start',
+                  'width' : '100%'
+              }
+          }>
+              <h2>S'inscrire</h2>
+              <Account />
+          </div>);
+    };
+
     renderRoute = (route, isHeaderEnabled, bodyContent, isFooterEnabled) => {
         const { isBlackBackgroundDisplayed } = this.state;
 
@@ -143,7 +157,7 @@ class App extends Component {
                     {isHeaderEnabled ? this.renderHeader() : null}
                     <div className={isBlackBackgroundDisplayed ? "BlackBackground" : ""} onClick={isBlackBackgroundDisplayed ? () => this.handleCloseAll(): undefined}>
                         <div className={isBlackBackgroundDisplayed ? "App-body disabledbutton" : "App-body"}>
-                            <div>{bodyContent}</div>
+                            {bodyContent}
                         </div>
                     </div>
                     {isFooterEnabled ? this.renderFooter() : null}
@@ -157,12 +171,13 @@ class App extends Component {
             <Router>
                 <Switch>
                     {this.renderRoute("/market/basket", true, this.renderBaskettBody(),true)}
-                    {this.renderRoute("/market/disconnect", true, this.renderDisconnectBody(),true)}
+                    {this.renderRoute("/market/categories", true, this.renderCategoriesBody() ,true)}
                     {this.renderRoute("/market/connect", true, this.renderConnectBody() ,true)}
+                    {this.renderRoute("/market/disconnect", true, this.renderDisconnectBody(),true)}
                     {this.renderRoute("/market/legalNotice", true, this.renderLegalNoticeBody() ,true)}
                     {this.renderRoute("/market/myAccount", true, this.renderMyAccountBody()  ,true)}
                     {this.renderRoute("/market/orders", true, this.renderOrdersBody() ,true)}
-                    {this.renderRoute("/market/categories", true, this.renderCategoriesBody() ,true)}
+                    {this.renderRoute("/market/subscribe", true, this.renderSubscribeBody() ,true)}
                     {this.renderRoute("/market", true, this.renderHomeBody() ,true)}
                     {this.renderRoute("/", true, this.renderHomeBody() ,true)}
                 </Switch>

@@ -2,11 +2,18 @@ import React, { Component } from "react";
 import {connect} from "react-redux";
 
 import './styles.css';
+import Spinner from "../../components/Loader";
 
 class Mail extends Component {
     constructor(props) {
         super(props);
-        this.state = { feedback: '', name: 'Anas', email: '', isSent: false };
+        this.state = {
+            feedback: '',
+            name: 'Anas',
+            email: '',
+            isSent: false,
+            isLoading : false
+        };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     };
@@ -23,7 +30,6 @@ class Mail extends Component {
         });
         const {email} = this.state;
 
-        // eslint-disable-next-line
         if (!/^([a-zA-Z0-9_.\-])+@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test(email)) {
             alert("Vous avez entré une adresse email invalide !")
         } else {
@@ -46,13 +52,22 @@ class Mail extends Component {
         }
     };
 
+    dispatchLoading = () => {
+        this.setState({
+            isLoading : true
+        });
+    };
+
     getOperationStatus = () => {
         this.setState({
-            isSent: !this.state.isSent
+            isSent: !this.state.isSent,
+            isLoading : false
         });
     };
 
     sendFeedback (serviceId, templateId, variables) {
+        this.dispatchLoading();
+
         window.emailjs.send(
             serviceId, templateId, variables
         ).then(res => {
@@ -66,7 +81,13 @@ class Mail extends Component {
     };
 
     render() {
-        const { isSent } = this.state;
+        const { isSent, isLoading } = this.state;
+
+        if(isLoading) {
+            return (<div className="FormContainer">
+                <Spinner />
+            </div>)
+        }
 
         if(isSent) {
             return (<div className="FormContainer">

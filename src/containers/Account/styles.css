@@ -1,0 +1,40 @@
+.Input {
+    width: 270px;
+    padding: 8px 20px;
+    margin: 8px 8px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.InputText {
+    text-align: start;
+    display: inline-block;
+    width: 150px;
+}
+
+.Submit {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    width: 150px;
+}
+
+.Submit:hover {
+    background-color: #45a049;
+}
+
+.FormContainer {
+    font-size: larger;
+    font-feature-settings: "pcap";
+    font-variant: petite-caps;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}

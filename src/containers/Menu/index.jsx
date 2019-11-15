@@ -129,7 +129,9 @@ export default class Menu extends Component {
                 <div className="MenuContainer">
                     <img className="Image1" src={menu} alt={menu} onClick={() => onClose()}/>
                     <Link className="Title" to="/market">MARKET</Link>
-                    <img className="Image2" src={connect} alt={connect} />
+                    <Link to="/market/subscribe">
+                        <img className="Image2" src={connect} alt={connect} />
+                    </Link>
                     <img className="Image3" src={basket} alt={basket} onClick={() => this.handleDisplayBasket()} />
                 </div>
                 <Basket onCloseBasket={() => this.handleDisplayBasket()}  displayBasket={displayBasket}/>
