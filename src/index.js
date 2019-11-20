@@ -5,7 +5,11 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
-import  { getPrayerTimeByCitySaga, getPrayerTimeByCountryAndCitySaga }  from './sagas';
+import  {
+    getAllProductsSaga,
+    getPrayerTimeByCitySaga,
+    getPrayerTimeByCountryAndCitySaga
+}  from './sagas';
 import createSagaMiddleware from 'redux-saga';
 import reducers from './reducers';
 
@@ -18,6 +22,7 @@ ReactDOM.render(
     <App />
 </Provider>, document.getElementById('root'));
 
+sagaMiddleware.run(getAllProductsSaga);
 sagaMiddleware.run(getPrayerTimeByCitySaga);
 sagaMiddleware.run(getPrayerTimeByCountryAndCitySaga);
 

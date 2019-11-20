@@ -11,7 +11,6 @@ const Timeout = 30000;
  * @param headers {Object} http headers to append to each request
  * @returns {Object} Ready to use client
  */
-
 export default (baseUrl, headers = {}) => {
   const client = httpClient({
     baseUrl,
@@ -64,5 +63,21 @@ export default (baseUrl, headers = {}) => {
        
        return client.get(route);
      },
+
+    /**
+     * Get All products
+     *
+     * @example
+     * client.getPrayerTimeByCity().then(...).catch(...)
+     *
+     * @returns {Promise<Object>}  A promise that fulfills with the response when the request is
+     *  complete, or rejected with and error.
+     */
+    getAllProducts : () => {
+      //'http://boost.ma/api/produits'
+      const route = `/api/produits`;
+
+      return client.get(route);
+    },
   }
 };

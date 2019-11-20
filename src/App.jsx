@@ -10,8 +10,8 @@ import {
 import './App.css';
 import './ressources/Fonts/font.css';
 import "react-datepicker/dist/react-datepicker.css";
-import { isNilOrEmpty } from './helpers/index';
-import { getPrayerTimeByCity, getPrayerTime } from './API/actions/index';
+import { isNilOrEmpty } from './helpers';
+import { getAllProducts, getPrayerTimeByCity, getPrayerTime } from './API/actions';
 import Mail from './containers/Mail';
 // import Culture from './containers/Culture';
 
@@ -30,6 +30,7 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            isProductsFetched: false,
             isBlackBackgroundDisplayed: false,
             isMenuDisplayed: false,
         };
@@ -50,7 +51,7 @@ class App extends Component {
             isBasketDisplayed: false,
         }));
         this.handleDisplayBlackBackground(!this.state.isMenuDisplayed);
-    }
+    };
 
     handleDisplayBasket = () => {
         this.handleCloseAll();
@@ -59,7 +60,7 @@ class App extends Component {
             isMenuDisplayed: false,
         }));
         this.handleDisplayBlackBackground(!this.state.isBasketDisplayed);
-    }
+    };
 
     handleDisplayBlackBackground = (state) => {
         this.setState(() => ({
@@ -68,6 +69,8 @@ class App extends Component {
     };
 
     handleCloseAll = () => {
+        this.props.getAllProducts();
+
         this.setState(() => ({
             isMenuDisplayed: false,
             isBlackBackgroundDisplayed: false,
@@ -159,7 +162,7 @@ class App extends Component {
                 </div>
             </Route>
         );
-    }
+    };
 
     render() {
         return (
@@ -183,14 +186,16 @@ class App extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        prayerTimeInformations: state.prayerTimeInformations,
         city: state.activeCity,
         country: state.activeCountry,
         culture: state.activeCulture,
+        prayerTimeInformations: state.prayerTimeInformations,
+        productsInformations: state.productsInformations,
     };
 };
 
 const mapDispatchToProps = dispatch => ({
+    getAllProducts: bindActionCreators(getAllProducts, dispatch),
     getPrayerTime: bindActionCreators(getPrayerTime, dispatch),
     getPrayerTimeByCity: bindActionCreators(getPrayerTimeByCity, dispatch),
 });

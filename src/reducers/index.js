@@ -7,6 +7,7 @@ import Cities from './cities';
 import Countries from './countries';
 import Cultures from './cultures';
 import PrayerTimeInformations from './prayer_time_informations';
+import ProductsInformations from './products_informations';
 
 const rootReducer = combineReducers({
   countries: Countries,
@@ -16,7 +17,8 @@ const rootReducer = combineReducers({
   prayerTimeInformations: PrayerTimeInformations,
   cultures: Cultures,
   activeCulture: ActiveCulture,
-  basketProducts: BasketProducts
+  basketProducts: BasketProducts,
+  productsInformations: ProductsInformations
 });
 
 export default rootReducer;
