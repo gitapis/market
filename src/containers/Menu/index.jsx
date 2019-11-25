@@ -100,7 +100,7 @@ export default class Menu extends Component {
                                 </div>
                             </Link>
                             {isConnected ?
-                                <Link to="/market/connect" onClick={() => this.props.onClose()}>
+                                <Link to="/market/login" onClick={() => this.props.onClose()}>
                                     <div className="MenuItem">
                                         <img className="MenuItemIcon" src={login} alt={login} />
                                         {"Se connecter"}
@@ -129,7 +129,7 @@ export default class Menu extends Component {
                 <div className="MenuContainer">
                     <img className="Image1" src={menu} alt={menu} onClick={() => onClose()}/>
                     <Link className="Title" to="/market">MARKET</Link>
-                    <Link to="/market/subscribe">
+                    <Link to="/market/login">
                         <img className="Image2" src={connect} alt={connect} />
                     </Link>
                     <img className="Image3" src={basket} alt={basket} onClick={() => this.handleDisplayBasket()} />

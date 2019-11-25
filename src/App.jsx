@@ -20,6 +20,7 @@ import { copyright, getValueByCulture, languages } from './helpers/strings';
 import Menu from "./containers/Menu/index";
 import Search from "./containers/Search/index";
 import Account from "./containers/Account";
+import Login from "./containers/Login";
 
 class App extends Component {
 
@@ -116,8 +117,6 @@ class App extends Component {
 
     renderDisconnectBody = () => <h2>Se déconnecter</h2>;
 
-    renderConnectBody = () =>  <h2>Se connecter</h2>;
-
     renderLegalNoticeBody = () => <h2>Mentions légales</h2>;
 
     renderMyAccountBody = () => <h2>Mon compte</h2>;
@@ -144,6 +143,14 @@ class App extends Component {
           </div>);
     };
 
+    renderLoginBody = () => {
+        return (
+            <div style={ {'width' : '100%'}}>
+                <h2>Se connecter</h2>
+                <Login />
+            </div>);
+    };
+
     renderRoute = (route, isHeaderEnabled, bodyContent, isFooterEnabled) => {
         const { isBlackBackgroundDisplayed } = this.state;
 
@@ -168,14 +175,14 @@ class App extends Component {
                 <Switch>
                     {this.renderRoute("/market/basket", true, this.renderBaskettBody(),true)}
                     {this.renderRoute("/market/categories", true, this.renderCategoriesBody() ,true)}
-                    {this.renderRoute("/market/connect", true, this.renderConnectBody() ,true)}
                     {this.renderRoute("/market/disconnect", true, this.renderDisconnectBody(),true)}
                     {this.renderRoute("/market/legalNotice", true, this.renderLegalNoticeBody() ,true)}
                     {this.renderRoute("/market/myAccount", true, this.renderMyAccountBody()  ,true)}
                     {this.renderRoute("/market/orders", true, this.renderOrdersBody() ,true)}
                     {this.renderRoute("/market/subscribe", true, this.renderSubscribeBody() ,true)}
+                    {this.renderRoute("/market/login", true, this.renderLoginBody() ,true)}
                     {this.renderRoute("/market", true, this.renderHomeBody() ,true)}
-                    {this.renderRoute("/", true, this.renderHomeBody() ,true)}
+                    {this.renderRoute("*", true, this.renderHomeBody() ,true)}
                 </Switch>
             </Router>
         )
