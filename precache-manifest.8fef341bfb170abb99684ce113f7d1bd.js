@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "7de051c1a3229d694f2e9adbb113d5a5",
+    "revision": "26410c4d96675c22fc157d514ad6a140",
     "url": "/market/index.html"
   },
   {
-    "revision": "f06ebf9528c47c8331a2",
+    "revision": "1064183902c9c433fe63",
     "url": "/market/static/css/2.86c53987.chunk.css"
   },
   {
-    "revision": "0964fed9c10abd511e4f",
-    "url": "/market/static/css/main.08e7c431.chunk.css"
+    "revision": "23a497f374f6c2bb2492",
+    "url": "/market/static/css/main.20d17a8e.chunk.css"
   },
   {
-    "revision": "f06ebf9528c47c8331a2",
-    "url": "/market/static/js/2.8fe2491a.chunk.js"
+    "revision": "1064183902c9c433fe63",
+    "url": "/market/static/js/2.45a8512f.chunk.js"
   },
   {
-    "revision": "0964fed9c10abd511e4f",
-    "url": "/market/static/js/main.7133f8c0.chunk.js"
+    "revision": "23a497f374f6c2bb2492",
+    "url": "/market/static/js/main.81fdd395.chunk.js"
   },
   {
     "revision": "e47acf3897170b4aaa20",
@@ -88,8 +88,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/market/static/media/nikon-d7500.8225c1b0.jpg"
   },
   {
-    "revision": "1c636eaa1470c1f487d5baf9506a25f5",
-    "url": "/market/static/media/search.1c636eaa.svg"
+    "revision": "598b815fb3ffdfd0562b3d20ea337048",
+    "url": "/market/static/media/search.598b815f.svg"
   },
   {
     "revision": "dd75d8007592eb3928c3691e2d251294",
@@ -100,8 +100,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/market/static/media/shopping.d03a9e65.svg"
   },
   {
-    "revision": "108e2b181134821f209211622b4ffba7",
-    "url": "/market/static/media/trash.108e2b18.svg"
+    "revision": "aabbbaf1b1c50fca0223d0708d87ad17",
+    "url": "/market/static/media/trash.aabbbaf1.svg"
   },
   {
     "revision": "ed52f187b2c4aad7fd02765c9cdc2f92",
