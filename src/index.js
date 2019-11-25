@@ -12,6 +12,7 @@ import  {
 }  from './sagas';
 import createSagaMiddleware from 'redux-saga';
 import reducers from './reducers';
+import {getAllProducts} from "./API/actions";
 
 const sagaMiddleware = createSagaMiddleware();
 const createStoreWithMiddleware = applyMiddleware(sagaMiddleware)(createStore);
@@ -26,4 +27,5 @@ sagaMiddleware.run(getAllProductsSaga);
 sagaMiddleware.run(getPrayerTimeByCitySaga);
 sagaMiddleware.run(getPrayerTimeByCountryAndCitySaga);
 
+store.dispatch(getAllProducts());
 serviceWorker.unregister();

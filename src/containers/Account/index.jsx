@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import {connect} from "react-redux";
 
 import './styles.css';
-import {Link} from "react-router-dom";
 
 class Account extends Component {
     constructor(props) {

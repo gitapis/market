@@ -8,7 +8,7 @@ import {
 const defaultState = {
   productsInformations : {
     informations: null,
-    fetchingStatus: SuccessType,
+    fetchingStatus: LoadingType,
   }
 };
 

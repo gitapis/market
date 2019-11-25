@@ -10,7 +10,7 @@ export default function* getAllProducts() {
 
         const { data } = yield call(client.getAllProducts, {});
         yield put(getAllProductsSuccess(data));
-        console.log(data);
+        //console.log(data);
     } catch (e) {
         console.log(e);
         yield put(getAllProductsError(e.toString()));

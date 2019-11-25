@@ -69,8 +69,6 @@ class App extends Component {
     };
 
     handleCloseAll = () => {
-        this.props.getAllProducts();
-
         this.setState(() => ({
             isMenuDisplayed: false,
             isBlackBackgroundDisplayed: false,

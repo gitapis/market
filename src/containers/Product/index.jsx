@@ -7,7 +7,7 @@ import Rating from 'react-star-rating-component';
 import './styles.css';
 import '../../ressources/Fonts/font.css';
 import { isNilOrEmpty } from '../../helpers/index';
-import { exact, number, string } from 'prop-types';
+import { exact, string } from 'prop-types';
 import Price from '../Price/index';
 import {selectProduct} from "../../actions/index";
 
@@ -15,11 +15,15 @@ class Product extends Component {
     static propTypes = {
         product: exact({
             alt: string,
+            categoryId: string,
+            created: string,
             description: string,
-            oldPrice: number,
-            price: number,
-            productId: number,
-            rating: number,
+            id: string,
+            modified: string,
+            oldPrice: string,
+            price: string,
+            productId: string,
+            rating: string,
             src: string,
             title: string
         })
@@ -28,11 +32,15 @@ class Product extends Component {
     static defaultProps = {
         product: {
             alt: "",
+            categoryId: "0",
+            created: "",
             description: "",
-            oldPrice: 0,
-            price: 0,
-            productId: 0,
-            rating: 3,
+            id: "0",
+            modified: "",
+            oldPrice: "0",
+            price: "0",
+            productId: "0",
+            rating: "3",
             src: "",
             title: ""
         }
@@ -40,17 +48,17 @@ class Product extends Component {
 
     renderOldPrice = () => {
         const { oldPrice, price } = this.props.product;
-        if(isNilOrEmpty(oldPrice) || oldPrice === 0) return null;
+        if(isNilOrEmpty(oldPrice) || oldPrice === "0") return null;
 
         if(oldPrice <= price) return null;
 
-        return <Price color="grey" isOldPrice price={oldPrice} />;
+        return <Price color="grey" isOldPrice price={parseInt(oldPrice)} />;
     };
 
     renderPrice = () => {
         const { price } = this.props.product;
 
-        return <Price color="red" price={price} />;
+        return <Price color="red" price={parseInt(price)} />;
     };
 
     renderTitle = () => {
@@ -67,7 +75,7 @@ class Product extends Component {
                 <Rating
                     name="rate1"
                     starCount={5}
-                    value={rating}
+                    value={parseInt(rating)}
                 />
             </div>
         )

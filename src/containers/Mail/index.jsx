@@ -30,6 +30,7 @@ class Mail extends Component {
         });
         const {email} = this.state;
 
+        // eslint-disable-next-line
         if (!/^([a-zA-Z0-9_.\-])+@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test(email)) {
             alert("Vous avez entré une adresse email invalide !")
         } else {
