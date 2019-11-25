@@ -33,7 +33,6 @@
     box-sizing: border-box;
 }
 
-.vl {
-    border-left: 6px solid green;
-    height: 10px;
+.Link {
+    font-size: small;
 }

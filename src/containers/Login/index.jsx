@@ -39,10 +39,11 @@ class Login extends Component {
                 <div className="Submit" onClick={this.handleSubmit}>
                     se connecter
                 </div>
-                <div>
-                    <Link to="/market/subscribe">mdp oublié</Link>
-                    <div className="vl"></div>
+                <div className="Link">
                     <Link to="/market/subscribe">s'inscrire</Link>
+                </div>
+                <div className="Link">
+                    <Link to="/market/subscribe">mot de passe oublié ?</Link>
                 </div>
             </form>
         );
