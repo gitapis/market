@@ -79,5 +79,21 @@ export default (baseUrl, headers = {}) => {
 
       return client.get(route);
     },
+
+    /**
+     * Authenticate action
+     *
+     * @example
+     * client.authenticate().then(...).catch(...)
+     *
+     * @returns {Promise<Object>}  A promise that fulfills with the response when the request is
+     *  complete, or rejected with and error.
+     */
+    authenticate : () => {
+      //'http://boost.ma/api/authenticate'
+      const route = `/api/authenticate`;
+
+      return client.post(route);
+    },
   }
 };
