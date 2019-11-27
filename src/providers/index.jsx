@@ -1,16 +1,36 @@
 import axios from 'axios';
 
+import {isNilOrEmpty} from "../helpers";
+
+const RemoveTokenWithException = (message) => {
+    localStorage.removeItem('token');
+    throw new Error(message);
+};
+
 const authProvider = {
     login: ({ username, password }) =>  {
         return axios.post(`http://boost.ma/api/authenticate`, { 'email' : username, 'password' :password })
             .then(response => {
-                if (response.status < 200 || response.status >= 300) {
-                    throw new Error(response.statusText);
+                if(!isNilOrEmpty(response)){
+                    if (response.status < 200 || response.status >= 300) {
+                        RemoveTokenWithException(response.statusText);
+                    }
+                    if (isNilOrEmpty(response.data)) {
+                        RemoveTokenWithException("Empty data retrieved");
+                    }
+
+                    return response.data[0];
                 }
-                return response.data[0];
+                else {
+                    RemoveTokenWithException("No valid response");
+                }
             }).then(({token}) => {
-                console.log(token);
-                localStorage.setItem('token', token);
+                if(isNilOrEmpty(token) || token === 'undefined'){
+                    RemoveTokenWithException("No token retrieved");
+                }
+                else {
+                    localStorage.setItem('token', token);
+                }
             });
     },
     logout: () => {
