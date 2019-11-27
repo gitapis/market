@@ -1,0 +1,34 @@
+.Input {
+    width: 270px;
+    padding: 8px 20px;
+    margin: 8px 8px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.Inputs {
+    margin: auto;
+    max-width: 600px;
+    text-align: initial;
+}
+
+.InputText {
+    text-align: start;
+    display: inline-block;
+    width: 150px;
+}
+
+.Submit {
+    background-color: #ffc82e;
+    color: black;
+    font-weight: bold;
+    width: 270px;
+    padding: 8px 20px;
+    margin: 8px 8px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
