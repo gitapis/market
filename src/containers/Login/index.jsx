@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import {connect} from "react-redux";
 
 import './styles.css';
-import {Link} from "react-router-dom";
+import {Link, Redirect, Route} from "react-router-dom";
 
 class Login extends Component {
     constructor(props) {
@@ -23,7 +23,13 @@ class Login extends Component {
     handlePasswordChange(event) { this.setState({ password: event.target.value, }) };
 
     handleSubmit() {
-
+        console.log("test");
+        localStorage.setItem('user', "test");
+       return (
+           <Route path="/market">
+               <Redirect to={{pathname: '/market'}}/>
+           </Route>
+           );
     };
 
     render() {

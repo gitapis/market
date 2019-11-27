@@ -22,6 +22,7 @@ import Menu from "./containers/Menu/index";
 import Search from "./containers/Search/index";
 import Account from "./containers/Account";
 import Login from "./containers/Login";
+import {PrivateRoute} from "./containers/PrivateRoute";
 
 class App extends Component {
 
@@ -152,6 +153,24 @@ class App extends Component {
             </div>);
     };
 
+    renderPrivateRoute = (route, isHeaderEnabled, bodyContent, isFooterEnabled) => {
+        const { isBlackBackgroundDisplayed } = this.state;
+
+        return (
+            <PrivateRoute path={route}>
+                <div className="App">
+                    {isHeaderEnabled ? this.renderHeader() : null}
+                    <div className={isBlackBackgroundDisplayed ? "BlackBackground" : ""} onClick={isBlackBackgroundDisplayed ? () => this.handleCloseAll(): undefined}>
+                        <div className={isBlackBackgroundDisplayed ? "App-body disabledbutton" : "App-body"}>
+                            {bodyContent}
+                        </div>
+                    </div>
+                    {isFooterEnabled ? this.renderFooter() : null}
+                </div>
+            </PrivateRoute>
+        );
+    };
+
     renderRoute = (route, isHeaderEnabled, bodyContent, isFooterEnabled) => {
         const { isBlackBackgroundDisplayed } = this.state;
 
@@ -174,12 +193,12 @@ class App extends Component {
         return (
             <Router>
                 <Switch>
-                    {this.renderRoute("/market/basket", true, this.renderBaskettBody(),true)}
-                    {this.renderRoute("/market/categories", true, this.renderCategoriesBody() ,true)}
-                    {this.renderRoute("/market/disconnect", true, this.renderDisconnectBody(),true)}
-                    {this.renderRoute("/market/legalNotice", true, this.renderLegalNoticeBody() ,true)}
-                    {this.renderRoute("/market/myAccount", true, this.renderMyAccountBody()  ,true)}
-                    {this.renderRoute("/market/orders", true, this.renderOrdersBody() ,true)}
+                    {this.renderPrivateRoute("/market/basket", true, this.renderBaskettBody(),true)}
+                    {this.renderPrivateRoute("/market/categories", true, this.renderCategoriesBody() ,true)}
+                    {this.renderPrivateRoute("/market/disconnect", true, this.renderDisconnectBody(),true)}
+                    {this.renderPrivateRoute("/market/legalNotice", true, this.renderLegalNoticeBody() ,true)}
+                    {this.renderPrivateRoute("/market/myAccount", true, this.renderMyAccountBody()  ,true)}
+                    {this.renderPrivateRoute("/market/orders", true, this.renderOrdersBody() ,true)}
                     {this.renderRoute("/market/subscribe", true, this.renderSubscribeBody() ,true)}
                     {this.renderRoute("/market/login", true, this.renderLoginBody() ,true)}
                     {this.renderRoute("/market", true, this.renderHomeBody() ,true)}
