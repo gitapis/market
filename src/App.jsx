@@ -6,7 +6,6 @@ import {
     Switch,
     Route
 } from "react-router-dom";
-import { Admin } from 'react-admin';
 
 import './App.css';
 import './ressources/Fonts/font.css';
@@ -138,11 +137,11 @@ class App extends Component {
     };
 
     renderSubscribeBody = () => {
-      return (
-          <div style={ {'width' : '100%'}}>
-              <h2>S'inscrire</h2>
-              <Account />
-          </div>);
+        return (
+            <div style={ {'width' : '100%'}}>
+                <h2>S'inscrire</h2>
+                <Account />
+            </div>);
     };
 
     renderLoginBody = () => {
@@ -157,7 +156,6 @@ class App extends Component {
         const { isBlackBackgroundDisplayed } = this.state;
 
         return (
-            <Admin dataProvider={() => true} authProvider={authProvider}>
             <Route path={route}>
                 <div className="App">
                     {isHeaderEnabled ? this.renderHeader() : null}
@@ -169,28 +167,25 @@ class App extends Component {
                     {isFooterEnabled ? this.renderFooter() : null}
                 </div>
             </Route>
-            </Admin>
         );
     };
 
     render() {
         return (
-            //
-                <Router>
-                    <Switch>
-                        {this.renderRoute("/market/basket", true, this.renderBaskettBody(),true)}
-                        {this.renderRoute("/market/categories", true, this.renderCategoriesBody() ,true)}
-                        {this.renderRoute("/market/disconnect", true, this.renderDisconnectBody(),true)}
-                        {this.renderRoute("/market/legalNotice", true, this.renderLegalNoticeBody() ,true)}
-                        {this.renderRoute("/market/myAccount", true, this.renderMyAccountBody()  ,true)}
-                        {this.renderRoute("/market/orders", true, this.renderOrdersBody() ,true)}
-                        {this.renderRoute("/market/subscribe", true, this.renderSubscribeBody() ,true)}
-                        {this.renderRoute("/market/login", true, this.renderLoginBody() ,true)}
-                        {this.renderRoute("/market", true, this.renderHomeBody() ,true)}
-                        {this.renderRoute("*", true, this.renderHomeBody() ,true)}
-                    </Switch>
-                </Router>
-            //</Admin>
+            <Router>
+                <Switch>
+                    {this.renderRoute("/market/basket", true, this.renderBaskettBody(),true)}
+                    {this.renderRoute("/market/categories", true, this.renderCategoriesBody() ,true)}
+                    {this.renderRoute("/market/disconnect", true, this.renderDisconnectBody(),true)}
+                    {this.renderRoute("/market/legalNotice", true, this.renderLegalNoticeBody() ,true)}
+                    {this.renderRoute("/market/myAccount", true, this.renderMyAccountBody()  ,true)}
+                    {this.renderRoute("/market/orders", true, this.renderOrdersBody() ,true)}
+                    {this.renderRoute("/market/subscribe", true, this.renderSubscribeBody() ,true)}
+                    {this.renderRoute("/market/login", true, this.renderLoginBody() ,true)}
+                    {this.renderRoute("/market", true, this.renderHomeBody() ,true)}
+                    {this.renderRoute("*", true, this.renderHomeBody() ,true)}
+                </Switch>
+            </Router>
         )
     }
 }
