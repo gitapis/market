@@ -24,7 +24,7 @@ class Login extends Component {
 
     handleSubmit = () => {
         authProvider.login('esseidi.anas@gmail.com','azerty2019');
-        console.log(this.props);
+
         if(!localStorage.getItem('user'))  this.props.history.push('/market');
     };
 
