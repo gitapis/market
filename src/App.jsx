@@ -6,6 +6,7 @@ import {
     Switch,
     Route
 } from "react-router-dom";
+import { createBrowserHistory } from "history";
 
 import './App.css';
 import './ressources/Fonts/font.css';
@@ -13,7 +14,6 @@ import "react-datepicker/dist/react-datepicker.css";
 import { isNilOrEmpty } from './helpers';
 import { getAllProducts, getPrayerTimeByCity, getPrayerTime } from './API/actions';
 import Mail from './containers/Mail';
-import authProvider from "./providers";
 // import Culture from './containers/Culture';
 
 import ProductList from './containers/ProductList/index';
@@ -190,8 +190,10 @@ class App extends Component {
     };
 
     render() {
+        const history = createBrowserHistory();
+
         return (
-            <Router>
+            <Router history={history}>
                 <Switch>
                     {this.renderPrivateRoute("/market/basket", true, this.renderBaskettBody(),true)}
                     {this.renderPrivateRoute("/market/categories", true, this.renderCategoriesBody() ,true)}

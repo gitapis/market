@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import {connect} from "react-redux";
+import {Link, withRouter} from "react-router-dom";
 
 import './styles.css';
-import {Link, Redirect, Route} from "react-router-dom";
+import authProvider from "../../providers";
 
 class Login extends Component {
     constructor(props) {
@@ -22,14 +22,10 @@ class Login extends Component {
     handleEmailChange(event) { this.setState({ email: event.target.value, }) };
     handlePasswordChange(event) { this.setState({ password: event.target.value, }) };
 
-    handleSubmit() {
-        console.log("test");
-        localStorage.setItem('user', "test");
-       return (
-           <Route path="/market">
-               <Redirect to={{pathname: '/market'}}/>
-           </Route>
-           );
+    handleSubmit = () => {
+        authProvider.login('esseidi.anas@gmail.com','azerty2019');
+        console.log(this.props);
+        if(!localStorage.getItem('user'))  this.props.history.push('/market');
     };
 
     render() {
@@ -56,8 +52,4 @@ class Login extends Component {
     };
 }
 
-function mapStateToProps(state) {
-    return { };
-}
-
-export default connect(mapStateToProps)(Login);
+export default withRouter(Login);
