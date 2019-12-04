@@ -16,13 +16,14 @@ import { getAllProducts, getPrayerTimeByCity, getPrayerTime } from './API/action
 import Mail from './containers/Mail';
 // import Culture from './containers/Culture';
 
-import ProductList from './containers/ProductList/index';
 import { copyright, getValueByCulture, languages } from './helpers/strings';
-import Menu from "./containers/Menu/index";
-import Search from "./containers/Search/index";
+import {PrivateRoute} from "./containers/PrivateRoute";
 import Account from "./containers/Account";
 import Login from "./containers/Login";
-import {PrivateRoute} from "./containers/PrivateRoute";
+import Logout from "./containers/Logout";
+import Menu from "./containers/Menu/index";
+import ProductList from './containers/ProductList/index';
+import Search from "./containers/Search/index";
 
 class App extends Component {
 
@@ -146,6 +147,11 @@ class App extends Component {
     };
 
     renderLoginBody = () => {
+        if(localStorage.getItem('token'))  return (<div style={ {'width' : '100%'}}>
+            <h2>Se déconnecter</h2>
+            <Logout />
+        </div>);
+
         return (
             <div style={ {'width' : '100%'}}>
                 <h2>Se connecter</h2>

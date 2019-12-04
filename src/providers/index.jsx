@@ -10,16 +10,17 @@ const RemoveTokenWithException = (message) => {
 
 const authProvider = {
     login: ({ email, password }) =>  {
-        return axios.post(`http://boost.ma/api/authenticate`, { 'email' : email, 'password' :password })
+        return axios.post(`http://boost.ma/api/user`, { 'email' : email, 'password' :password })
             .then(response => {
+
                 if(!isNilOrEmpty(response)){
                     if (response.status < 200 || response.status >= 300) {
                         RemoveTokenWithException(response.statusText);
                     }
+
                     if (isNilOrEmpty(response.data)) {
                         RemoveTokenWithException("Empty data retrieved");
                     }
-
                     return response.data[0];
                 }
                 else {
@@ -41,7 +42,7 @@ const authProvider = {
         return Promise.resolve();
     },
     checkAuth: () => {
-        axios.post(`http://boost.ma/api/check`, { 'email' : localStorage.getItem('email'), 'token' :localStorage.getItem('token') })
+        axios.post(`http://boost.ma/api/user`, { 'email' : localStorage.getItem('email'), 'token' :localStorage.getItem('token') })
             .then(response => {
                 if(!isNilOrEmpty(response)){
                     if (response.status < 200 || response.status >= 300) {

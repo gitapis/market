@@ -8,7 +8,7 @@ class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            username: 'Anas',
+            username: '',
             email: '',
             password: ''
         };
@@ -23,19 +23,19 @@ class Login extends Component {
     handlePasswordChange(event) { this.setState({ password: event.target.value, }) };
 
     handleSubmit = () => {
-        authProvider.login('esseidi.anas@gmail.com','azerty2019');
-
-        if(!localStorage.getItem('user'))  this.props.history.push('/market');
+        const { email, password} = this.state;
+        authProvider.login({email,password});
+        this.props.history.push('/market');
     };
 
     render() {
         return (
             <form>
                 <div>
-                    <input className="Input" type="email" onChange={this.handleChange} placeholder="Email" required/>
+                    <input className="Input" type="email" onChange={this.handleEmailChange} placeholder="Email" required/>
                 </div>
                 <div>
-                    <input className="Input" type="password" onChange={this.handleChange} placeholder="Password" required/>
+                    <input className="Input" type="password" onChange={this.handlePasswordChange} placeholder="Password" required/>
                 </div>
                 <br/>
                 <div className="Submit" onClick={this.handleSubmit}>
