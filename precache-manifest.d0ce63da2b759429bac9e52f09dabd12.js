@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "51700965470f9f5da42770c39509b897",
+    "revision": "41b03143e5bf69ac7902111e7db2cbeb",
     "url": "/market/index.html"
   },
   {
-    "revision": "f21167b797af5e3a9b89",
-    "url": "/market/static/css/2.8ba04c1f.chunk.css"
+    "revision": "47a76d71ea96e3fe9b06",
+    "url": "/market/static/css/2.b34feaed.chunk.css"
   },
   {
-    "revision": "10b2423c5e3e6864d19d",
-    "url": "/market/static/css/main.9019ed6a.chunk.css"
+    "revision": "dada9b3b5475575fe983",
+    "url": "/market/static/css/main.549a8c75.chunk.css"
   },
   {
-    "revision": "f21167b797af5e3a9b89",
-    "url": "/market/static/js/2.0e5e9966.chunk.js"
+    "revision": "47a76d71ea96e3fe9b06",
+    "url": "/market/static/js/2.70a6b2f2.chunk.js"
   },
   {
-    "revision": "10b2423c5e3e6864d19d",
-    "url": "/market/static/js/main.74e2f5ad.chunk.js"
+    "revision": "dada9b3b5475575fe983",
+    "url": "/market/static/js/main.9b1c9720.chunk.js"
   },
   {
     "revision": "e47acf3897170b4aaa20",
@@ -88,8 +88,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/market/static/media/nikon-d7500.8225c1b0.jpg"
   },
   {
-    "revision": "1c636eaa1470c1f487d5baf9506a25f5",
-    "url": "/market/static/media/search.1c636eaa.svg"
+    "revision": "598b815fb3ffdfd0562b3d20ea337048",
+    "url": "/market/static/media/search.598b815f.svg"
   },
   {
     "revision": "dd75d8007592eb3928c3691e2d251294",
@@ -100,8 +100,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/market/static/media/shopping.d03a9e65.svg"
   },
   {
-    "revision": "108e2b181134821f209211622b4ffba7",
-    "url": "/market/static/media/trash.108e2b18.svg"
+    "revision": "aabbbaf1b1c50fca0223d0708d87ad17",
+    "url": "/market/static/media/trash.aabbbaf1.svg"
   },
   {
     "revision": "ed52f187b2c4aad7fd02765c9cdc2f92",
